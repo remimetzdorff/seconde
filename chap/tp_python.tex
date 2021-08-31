@@ -1,0 +1,120 @@
+\include{template}
+%\cfoot{} %% if no page number is needed
+
+%\renewcommand\arraystretch{1.2}
+
+\begin{document}
+
+\lstset{
+	backgroundcolor=\color{gray_cc},
+    frame = single,
+    numbers     = left,
+    showspaces  = false,
+    showstringspaces    = false,
+    literate=
+	{à}{{\`a}}1
+	{â}{{\^a}}1
+	{é}{{\'e}}1
+	{ê}{{\^e}}1
+	{ç}{{\c{c}}}1
+}
+
+\begin{header}
+TP
+
+Python\texttrademark{} et solutions aqueuses
+\end{header}
+
+\section*{Rendre les programmes}
+
+Au cours de ce TP vous allez modifier et créer plusieurs fichiers que vous devrez rendre au professeur : \texttt{programme2.py}, \texttt{programme3.py} et \texttt{programme4.py}.
+
+Après vous être connecté avec vos identifiants, créez un dossier nommé d'après les prénoms des membres du groupe \textit{Prénom1-Prénom2} dans le dossier \og Ordinateur \textrightarrow{} Ma classe \textrightarrow{} Restitution de devoirs \textrightarrow{} Physique-Chimie \fg{}.
+Vous y placerez les fichiers à rendre.
+
+\section*{Récupérer les fichiers sur le réseau local}
+
+Vous trouverez les fichiers nécessaires \texttt{programme1} et \texttt{programme2} dans le dossier \og Ordinateur \textrightarrow{} Ma classe \textrightarrow{} Documents en consultation \textrightarrow{} Physique-Chimie \fg{}.
+
+Copiez-collez les dans le dossier que vous avez créé \textit{Prénom1-Prénom2} où vous pourrez les modifier.
+
+\section*{Un premier programme : \texttt{programme1.py}}
+
+\begin{lstlisting}[style = Python]
+# le programme demande l'année de naissance de l'utilisateur
+annee_Naissance = float(input("En quelle année es-tu né(e) ? "))
+
+# le programme demande l'année en cours
+annee_Actuelle = float(input("En quelle année sommes-nous ? "))
+
+# on calcule l'âge de l'utilisateur
+age = annee_Actuelle - annee_Naissance
+
+# on affiche la réponse
+print("Tu as actuellement ", age, " ans")
+\end{lstlisting}
+
+\begin{enumerate}
+\item \anarai{} Ouvrez le programme \texttt{programme1.py} avec EduPython.
+En le lisant, à votre avis à quoi sert-il ?
+(Rédigez votre réponse sur le compte-rendu.)
+\label{quest:hyp}
+
+\item \rea{} \val{} Exécutez le programme en cliquant sur la flèche verte.
+Le résultat du programme s'affiche dans la console  en dessous.
+Cela confirme-t-il l'hypothèse formulée à la question~\ref{quest:hyp} ?
+(Rédigez votre réponse sur le compte-rendu.)
+
+\item \anarai{} À votre avis, à quoi servent les lignes qui commencent par le symbole \# ?
+(Rédigez votre réponse sur le compte-rendu.)
+
+\item \app{} Comment traduiriez-vous  la commande \texttt{print(...)} de la ligne 11 ?
+(Rédigez votre réponse sur le compte-rendu.)
+\end{enumerate}
+
+\paragraph*{Remarque} En Python, les nombres à virgule se notent avec un \og . \fg{} : 7{,}2 s'écrit \texttt{7{.}2}
+
+\section*{Calcul de concentration pour une dissolution}
+
+\begin{enumerate}[resume]
+\item \anarai{} \com{} Complétez le programme \texttt{programe2.py} qui automatise le calcul de concentrations massiques :
+\begin{itemize}
+\item[•] le programme doit demander la masse de soluté, exprimée en grammes : \texttt{m\_solute} ;
+\item[•] le programme doit demander le volume de la solution, exprimé en litres : \texttt{V\_solution} ;
+\item[•] le programme doit calculer la concentration massique de la solution : \texttt{Cm} ;
+\item[•] le programme doit afficher cette concentration et son unité.
+\end{itemize}
+\end{enumerate}
+
+Une analyse montre que \unit{250}{mL} de mer Morte contiennent \unit{68{,}8}{g} de sel.
+\begin{enumerate}[resume]
+\item \rea Utilisez votre programme pour en déduire la concentration massique de sel dans la mer Morte et notez le résultat sur votre compte-rendu.
+\end{enumerate}
+
+La piscine de Bob a pour dimension $L = \unit{8}{m}$, $l = \unit{4}{m}$ et $h=\unit{1{,}5}{m}$.
+Lors du premier remplissage, il y dissout \unit{200}{kg} de sel son système de nettoyage.
+On rappelle que le volume d'un pavé droit est $V=L\times l\times h$.
+\begin{enumerate}[resume]
+\item \rea{} Calculez la concentration massique de sel dans la piscine (attention aux unités !).
+\item \rea{} \val{} Utilisez votre programme pour en déduire la concentration massique en sel dans la piscine.
+(Notez la valeur obtenue sur le compte-rendu.)
+
+\item \app{} \com{} Créez un nouveau programme \texttt{programme3.py} qui calcule tout seul la concentration massique en sel dans la piscine et réalise tout seul les calculs annexes (calcul du volume).
+\end{enumerate}
+Pour que le système de nettoyage fonctionne bien, la concentration en sel doit être comprise entre $\unit{3}{g/L}$ et $\unit{5}{g/L}$.
+\begin{enumerate}[resume]
+\item \val{} Le système de nettoyage fonctionnera-t-il correctement dans la piscine de Bob ?
+\end{enumerate}
+
+\section*{Préparation d'une solution par dissolution}
+
+On souhaite préparer un volume $V_\mathrm{solution} = \unit{0{,}200}{L}$ d'une solution aqueuse de permanganate de potassium de concentration massique $C_\mathrm{m} = \unit{0{,}50}{g/L}$.
+\begin{enumerate}[resume]
+\item \rea{} Déterminez la masse de permanganate de potassium nécessaire pour préparer cette solution.
+(Rédigez votre réponse sur le compte-rendu.)
+\item \com{} Écrivez le programme \texttt{programme4.py} qui calcule la masse de soluté à peser pour préparer un volume donné d'une solution de concentration massique fixée.
+\item \val{} Testez votre programme dans le cas précédent.
+(Notez la valeur obtenue sur le compte-rendu.)
+\end{enumerate}
+
+\end{document}

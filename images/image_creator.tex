@@ -1,0 +1,128 @@
+\documentclass[varwidth,preview,border=5mm,convert={density=600,outext=.png}]{standalone}
+\usepackage{tikz}
+\usepackage{rmtemplate}
+\usepackage{chemfig}
+
+\begin{document}
+
+
+\end{document}
+
+%propane
+\chemfig[angle increment=90, atom sep=20pt]{H-C([-1]-H)([1]-H)-C([-1]-H)([1]-H)-C([-1]-H)([1]-H)-H}
+
+%dioxygène
+\chemfig[angle increment=90, atom sep=20pt]{\lewis{35, O}=\lewis{17,O}}
+
+%acide fluoridrique
+\chemfig[angle increment=90, atom sep=20pt]{H-\lewis{026,F}}
+
+%sulfure d'hydrogène
+\chemfig[angle increment=90, atom sep=20pt]{H-\lewis{26,S}-H}
+
+%molécule d'eau coudée
+\chemfig[atom sep=20pt]{H-\lewis{26,O}-H}
+
+%molécule d'eau coudée
+\chemfig[atom sep=20pt]{H-[:30]\lewis{13,O}-[:-30]H}
+
+%classification périodique
+\newcommand{\y}{\linewidth/8.01}
+\newcommand{\z}{\y/2}
+\begin{tikzpicture}
+\draw [color=white,fill=white] (0,0) rectangle ++ (8*\y, 3.25*\y);
+
+\foreach \i in {0,1, 2} {
+  \draw [fill=red_c] (0, \i*\y) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1} {
+  \draw [fill=orange_c] (\y, \i*\y) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1} {
+  \draw [fill=gray_c] (2*\y, \i*\y) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1} {
+  \draw [fill=gray_c] (3*\y, \i*\y) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1} {
+  \draw [fill=gray_c] (4*\y, \i*\y) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1} {
+  \draw [fill=yellow_c] (5*\y, \i*\y) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1} {
+  \draw [fill=green_c] (6*\y, \i*\y) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1,2} {
+  \draw [fill=bleu_c] (7*\y, \i*\y) rectangle ++ (\y, \y);
+}
+
+\draw [line width=3pt] (2\y, 0) -- ++ (0, 2\y);
+
+\draw (\z, 3*\y) node [below] {Hydrogène};
+\draw (\z, 2.5*\y) node [] {\Large $\mathrm{H}$};
+\draw (\z, 2*\y) node [below] {Lithium};
+\draw (\z, 1.5*\y) node [] {\Large $\mathrm{Li}$};
+\draw (\z, 1*\y) node [below] {Sodium};
+\draw (\z, .5*\y) node [] {\Large $\mathrm{Na}$};
+
+\draw (1.5\y, 2*\y) node [below] {Béryllium};
+\draw (1.5\y, 1.5*\y) node [] {\Large $\mathrm{Be}$};
+\draw (1.5\y, 1*\y) node [below] {Magnésium};
+\draw (1.5\y, .5*\y) node [] {\Large $\mathrm{Mg}$};
+
+\draw (2.5\y, 2*\y) node [below] {Bore};
+\draw (2.5\y, 1.5*\y) node [] {\Large $\mathrm{B}$};
+\draw (2.5\y, 1*\y) node [below] {Aluminium};
+\draw (2.5\y, .5*\y) node [] {\Large $\mathrm{Al}$};
+
+\draw (3.5\y, 2*\y) node [below] {Carbone};
+\draw (3.5\y, 1.5*\y) node [] {\Large $\mathrm{C}$};
+\draw (3.5\y, 1*\y) node [below] {Silicium};
+\draw (3.5\y, .5*\y) node [] {\Large $\mathrm{Si}$};
+
+\draw (4.5\y, 2*\y) node [below] {Azote};
+\draw (4.5\y, 1.5*\y) node [] {\Large $\mathrm{N}$};
+\draw (4.5\y, 1*\y) node [below] {Phosphore};
+\draw (4.5\y, .5*\y) node [] {\Large $\mathrm{P}$};
+
+\draw (5.5\y, 2*\y) node [below] {Oxygène};
+\draw (5.5\y, 1.5*\y) node [] {\Large $\mathrm{O}$};
+\draw (5.5\y, 1*\y) node [below] {Soufre};
+\draw (5.5\y, .5*\y) node [] {\Large $\mathrm{S}$};
+
+\draw (6.5\y, 2*\y) node [below] {Fluor};
+\draw (6.5\y, 1.5*\y) node [] {\Large $\mathrm{F}$};
+\draw (6.5\y, 1*\y) node [below] {Chlore};
+\draw (6.5\y, .5*\y) node [] {\Large $\mathrm{Cl}$};
+
+\draw (7.5\y, 3*\y) node [below] {Hélium};
+\draw (7.5\y, 2.5*\y) node [] {\Large $\mathrm{He}$};
+\draw (7.5\y, 2*\y) node [below] {Néon};
+\draw (7.5\y, 1.5*\y) node [] {\Large $\mathrm{Ne}$};
+\draw (7.5\y, 1*\y) node [below] {Argon};
+\draw (7.5\y, .5*\y) node [] {\Large $\mathrm{Ar}$};
+
+\draw (.5\y, 3\y) node [above, color=red_f] {\large\textbf{1}};
+\draw (1.5\y, 2\y) node [above, color=red_f] {\large\textbf{2}};
+\draw (7.5\y, 3\y) node [above, color=red_f] {\large\textbf{18}};
+\foreach \i in {13,14,...,17} {
+  \draw (\i*\y-10.5\y, 2\y) node [above, color=red_f] {\large\textbf{\i}};
+}
+\end{tikzpicture}
+
+% trajectoire rectiligne accélérée
+\begin{tikzpicture}
+\draw [color=bleu_f] (0, 0) node {$\bullet$};
+\draw [color=bleu_f] (0, 0) node [above left] {$M_0$};
+\foreach \t in {1,2,...,6} {
+  \newcommand{\x}{\t*\t/4}
+  \draw [color=bleu_f] (\x, 0) node {$\bullet$};
+  \draw [color=bleu_f] (\x, 0) node [above] {$M_\t$};
+}
+\end{tikzpicture}
+
+% vecteur vitesse horizontal
+\begin{tikzpicture}
+\draw [->, >=stealth, color=bleu_f, ultra thick] (0,0) -- (2,0) node [midway, above] {$\vec{v}$};
+\end{tikzpicture}

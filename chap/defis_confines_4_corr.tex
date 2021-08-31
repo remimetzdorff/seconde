@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+\usepackage{pythontex}
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Les défis confinés -- Épisode 4
+
+Correction
+\end{header}
+
+\begin{enumerate}
+\item Le programme \texttt{masse\_atomique.py} permet de calculer la masse approchée d'un atome.
+
+\item En regardant dans la classification périodique des éléments, on voit que l'élément ayant 6 comme numéro atomique est le carbone de symbole C.
+Il s'agit donc ici de l'atome de carbone puisqu'il a 6 protons.
+\[^\text{14}_\text{6}\text{C}\]
+
+\item L'atome possède autant d'électrons que de protons puisqu'il est neutre : il a donc 6 électrons.
+\[m_\mathrm{nuage\ électronique} = Z \times m_\mathrm{e} = 6 \times 9{,}1\times 10^{-31} = \unit{5{,}46\times 10^{-30}}{kg}.\]
+\emph{Cf. fin de correction pour le programme complété.}
+
+\item
+\[\frac{m_\mathrm{atome}}{m_\mathrm{nuage\ électronique}} = \frac{2{,}34\times 10^{-26}}{5{,}46\times 10^{-30}} \approx 4\,282.\]
+L'atome est environ 4300  fois plus lourds que son nuage électronique.
+
+\item \emph{Cf. fin de correction pour le programme complété.}
+
+\item
+En utilisant le programme après avoir modifié les valeurs de $Z$ et $A$ on trouve directement que l'atome de fer est environ 4\,000 fois plus lourd que son nuage électronique.
+
+Sinon, il faut reprendre les calculs des questions précédentes :
+\[m_\mathrm{atome} \approx A \times m_\mathrm{nucléon} = 56 \times 1{,}67\times 10^{-27} \approx \unit{9{,}35\times 10^{-26}}{kg},\]
+\[m_\mathrm{nuage\ électronique} = Z \times m_\mathrm{e} = 26 \times 9{,}1\times 10^{-31} \approx \unit{2{,}37\times 10^{-29}}{kg},\]
+\[\frac{m_\mathrm{atome}}{m_\mathrm{nuage\ électronique}} = \frac{9{,}35\times 10^{-26}}{2{,}37\times 10^{-29}} \approx 3\,952.\]
+L'atome de fer est environ 4\,000 fois plus lourd que son nuage électronique.
+\end{enumerate}
+
+\newpage
+
+\section*{Programme modifié}
+
+\begin{pyverbatim}
+masse_nucleon = 1.67e-27    # masse d'un nucléon en kg
+masse_electron = 9.1e-31    # masse d'un électron en kg
+
+#Z = 6                       # nombre de protons ou numéro atomique
+#A = 14                      # nombre de nucléons ou nombre de masse
+
+# Valeurs de Z et A pour le fer
+Z = 26
+A = 56
+
+masse = A * masse_nucleon
+print("La masse de l'atome est ", masse, " kg")
+
+masse_nuage_electronique = Z * masse_electron
+print("La masse du nuage electronique est ", masse_nuage_electronique, " kg")
+
+comparaison = masse/masse_nuage_electronique
+print("L'atome est ", comparaison, " fois plus lourds que son nuage electronique")
+\end{pyverbatim}
+
+\section*{Résultats de l'exécution du programme}
+
+\begin{ttfamily}
+\begin{pycode}
+masse_nucleon = 1.67e-27    # masse d'un nucléon en kg
+masse_electron = 9.1e-31    # masse d'un électron en kg
+
+#Z = 6                       # nombre de protons ou numéro atomique
+#A = 14                      # nombre de nucléons ou nombre de masse
+
+# Valeurs de Z et A pour le fer
+Z = 26
+A = 56
+
+masse = A * masse_nucleon
+print("\\noindent{}La masse de l'atome est "+str(masse)+ " kg\n")
+
+masse_nuage_electronique = Z * masse_electron
+print("\\noindent{}La masse du nuage electronique est "+str(masse_nuage_electronique)+" kg\n")
+
+comparaison = masse/masse_nuage_electronique
+print("\\noindent{}L'atome est "+str(comparaison)+" fois plus lourds que son nuage electronique")
+\end{pycode}
+\end{ttfamily}
+
+\end{document}

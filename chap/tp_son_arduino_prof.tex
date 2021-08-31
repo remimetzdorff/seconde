@@ -1,0 +1,139 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+TP -- Fiche prof
+
+Un diapason électronique
+\end{header}
+
+\section*{Contextualisation}
+
+Lors du dernier TP, caractérisation de son avec Phyphox.
+
+Rappel : le diapason est un instrument qui permet émet une seule note dont la fréquence est \unit{440}{Hz}. (écrit au tableau)
+
+Aujourd'hui on va produire un son en utilisant une carte équipée d'un micro-contrôleur : Arduino.
+
+Jouer Star Wars avec Arduino.
+
+\section*{Consignes}
+
+Questions 4 à 9 à rédiger.
+
+C'est noté, un CR chacun, j'en ramasse un au sort par groupe en fin de séance.
+
+\section*{Matériel}
+
+En salle 604 :
+\begin{itemize}
+\item[•] cartes Arduino ;
+\item[•] câbles USB ;
+\item[•] jumpers ;
+\item[•] résistances \unit{220}{\ohm} ;
+\item[•] HP ou piezo.
+\end{itemize}
+
+Présenter rapidement les breadboards en montrant au tableau les pins connectées. 
+
+\section*{Évaluation}
+
+\begin{center}
+\begin{tabular}{l|l|c}
+\textbf{Compétence} & \textbf{Aptitude} / Observable & \textbf{Niveau} \\
+\hline \hline
+\rea   		& \textbf{Réaliser le montage correspondant à l'expérience proposée}	& \\
+				& Le montage fonctionne															& A \\
+				& 	Peu d'erreurs																				& B \\
+				& Beaucoup d'erreurs																	& C \\
+				& Élève démuni, il faut faire le montage pour lui						& D \\
+\hline
+\anarai	& \textbf{Proposer une méthode pour vérifier mon hypothèse} & \\
+				& Protocole OK																				& A \\
+				& Idée OK mais protocole confus 												& B \\
+				& Comment pourrait-on observer l'influence de chaque argument ? & C \\
+				& Modifier un paramètre puis l'autre, etc.									& D \\
+\hline
+\val		 	& \textbf{Avoir un regard critique sur mes résultats} 				& \\
+				& Tout marche																				& A \\
+				& 	Fréquence moitié																		& B \\
+				& Fonction loop pas utilisée														& C \\
+				& Ne fonctionne pas																	& D \\
+\end{tabular}
+\end{center}
+
+\section*{Aides}
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+
+\item
+\begin{itemize}
+\item[•] Comment savoir sur quelle broche envoyer le signal périodique ?
+\item[•] Quelle grandeur permet de caractériser un signal périodique ?
+\item[•] Souvent avec Arduino, les durées sont exprimées en ms.
+\end{itemize}
+
+\item
+\begin{itemize}
+\item[•] Comment caractériser un son associé à un signal périodique ?
+\item[•] Phyphox ?
+\end{itemize}
+
+\item
+\begin{itemize}
+\item[•] Expliquez ce que vous avez modifier et ce qui a changé.
+\end{itemize}
+
+\item
+\begin{itemize}
+\item[•] loop = boucle
+\end{itemize}
+
+\item
+\begin{itemize}
+\item[•] lit. delay = retard ou retardement
+\item[•] À votre avis, c'est en quelle unité ?
+Convertir en s.
+\end{itemize}
+
+\item
+\begin{itemize}
+\item[•] Tracer le repère tension pin 13 = f(temps)
+\item[•] Tracer le signal pendant 5s.
+\item[•] Mimer.
+\end{itemize}
+
+\item
+\begin{itemize}
+\item[•]
+\end{itemize}
+
+\item
+\begin{itemize}
+\item[•] Reformuler l'objectif avec un vocabulaire scientifique (signal, fréquence, son, etc...)
+\item[•] Le haut-parleur est-il connecté à la bonne sortie ?
+\item[•] Phyphox ?
+\item[•] Il y a pas un facteur deux par hasard ?
+\end{itemize}
+\end{enumerate}
+
+\paragraph{Questions subsidiaires:}
+\begin{enumerate}[resume]
+\item En utilisant la fonction \texttt{tone} du \texttt{programme1}, produire la suite de son suivant :
+
+\item Comment améliorer la qualité du son produit par le montage ?
+\begin{itemize}
+\item[•] Dessiner l'allure du signal sortant de la broche 13.
+\item[•] Et celle associée au diapason ?
+\end{itemize}
+\end{enumerate}
+
+\end{document}

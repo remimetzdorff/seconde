@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper,fleqn]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\newcommand{\ritem}{\refstepcounter{enumi}\item[$\star$ \theenumi .]}
+
+\begin{document}
+
+\begin{header}
+Activité -- Compter des entités chimiques Correction
+\end{header}
+
+\section*{Quelle est la masse d'une molécule ?}
+
+\begin{enumerate}
+\item La masse $m_\mathrm{O_2}$ d'une molécule de dioxygène est :
+\[
+m_\mathrm{O_2} = 2 \times m_\mathrm{O} = 2 \times 2\dcoma66 \times 10^{-26} = \unit{5\dcoma32 \time 10^{-26}}{kg}.
+\]
+
+\item La masse $m_\methane$ d'une molécule de méthane est :
+\[
+m_\methane = m_\mathrm{C} + 4 \times m_\mathrm{H} = 1\dcoma99 \times 10^{-26} + 4 \times 1\dcoma67 \times 10^{-27} \approx \unit{2\dcoma66 \time 10^{-26}}{kg}.
+\]
+
+\item La masse $m_\mathrm{benz}$ d'une molécule de benzaldéhyde est :
+\begin{align*}
+m_\mathrm{benz}	&= m_\mathrm{O} + 7 \times m_\mathrm{C} + 6 \times m_\mathrm{H}\\
+								&= 2\dcoma66 \times 10^{-26} + 7 \times 1\dcoma99 \times 10^{-26} + 6 \times 1\dcoma67 \times 10^{-27} \\
+								&\approx \unit{1\dcoma76 \time 10^{-25}}{kg}.
+\end{align*}
+
+\end{enumerate}
+
+\section*{Compter des particules}
+
+\begin{enumerate}[resume]
+\item Le nombre de balles de tennis dans le seau est $\frac{3600}{57} \approx 63$.
+
+On trouve trois balles de plus car l'énoncé indique que \unit{3600}{g} est la masse du seau rempli de balles, soit la masse du seau et celle des balles.
+Pour obtenir le vrai nombre de balles, il faudrait retirer la masse du seau (qui n'est pas connue ici).
+
+\item Le nombre $N$ d'atomes d'aluminium contenus dans la règle est :
+\[
+N = \frac{m_\mathrm{règle}}{m_\mathrm{Al}} = \frac{0\dcoma040}{4\dcoma48\times10^{-26}} \approx 8\dcoma9 \times 10^{23}.
+\]
+
+\item La formule qui donne le nombre $N$ d'entités de masse $m_\mathrm{entité}$ dans un échantillon de masse $m$ est :
+\[
+N = \frac{m}{m_\mathrm{entité}}.
+\]
+On pouvait trouver cette formule, soit en utilisant les calculs précédents, soit en regardant page 88 du livre.
+\end{enumerate}
+
+\section*{Quantité de matière}
+
+\begin{enumerate}[resume]
+\item Cf. vidéo \href{https://youtu.be/\_kosdfe79OU}{https://youtu.be/\_kosdfe79OU}.
+\end{enumerate}
+
+\section*{Autant de molécules d'eau dans un dé à coudre que d'étoiles dans l'Univers ?}
+
+\begin{enumerate}[resume]
+\item La formule chimique de l'eau est $\eau$.
+
+\item La masse $m_\mathrm{\eau}$ d'une molécule d'eau est :
+\[
+m_{\eau} = m_\mathrm{O} + 2 \times m_\mathrm{H} = 2\dcoma66 \times 10^{-26} + 2 \times 1\dcoma67 \times 10^{-27}  \approx \unit{3\dcoma00 \time 10^{-26}}{kg}.
+\]
+
+\item Le nombre $N$ de molécules d'eau contenues dans le dé à coudre est :
+\[
+N = \frac{m}{m_{\eau}} = \frac{3 \times 10^{-3}}{3\dcoma00 \time 10^{-26}} \approx 1 \times 10^{23}.
+\]
+\warning{} Les deux masses doivent être exprimées avec la même unité.
+On a choisi les kilogrammes : $m = \unit{3}{g} = \unit{3 \times 10^{-3}}{kg}$.
+
+\item Dans la vidéo, Cyrus North indique qu'il y a environ $\frac{6\dcoma02 \times 10^{23}}{6} \approx 1 \times 10^{23}$ grains de sable sur Terre, soit le même nombre que le nombre de molécules d'eau dans le dé à coudre.
+En effet :
+\[
+\frac{\text{nombre de molécules d'eau dans le dé à coudre}}{\text{nombre de grains de sable sur Terre}} = \frac{1 \times 10^{23}}{1 \times 10^{23}} = 1.
+\]
+\textbf{Il y a autant de molécules d'eau dans le dé que de grains de sable sur Terre !}
+
+\item D'après les chiffres de l'énoncé, il y a environ $250 \times 10^9 \times 400 \times 10^9 = 1\dcoma00 \times 10^{23}$ étoiles dans l'Univers.
+
+\textbf{Il y a autant de molécules d'eau dans le dé à coudre que d'étoiles dans l'Univers !}
+
+Remarque : il y a aussi autant de grains de sable sur Terre que d'étoiles dans l'Univers !
+
+\item En utilisant la formule de la page 88 :
+\[
+n = \frac{N}{N_A} = \frac{1 \times 10^{23}}{6\dcoma02 \times 10^{23}} \approx \unit{0\dcoma2}{mol}.
+\]
+Le dé à coudre contient \unit{0\dcoma2}{mol} d'eau.
+
+\end{enumerate}
+
+\end{document}
+
+\section*{Conversation fictive entre Avogadro et Ampère}

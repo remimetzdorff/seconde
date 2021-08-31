@@ -1,0 +1,98 @@
+\include{template_ds}
+\cfoot{} %% if no page number is needed
+\usepackage{setspace}
+
+\newcommand{\Hsquare}{%
+  \text{\fboxsep=-.2pt\fbox{\rule{0pt}{1ex}\rule{1ex}{0pt}}}%
+}
+
+\begin{document}
+
+\begin{header}
+Interrogation -- Chapitre 2
+
+\normalsize
+\flushleft
+\begin{doublespace}
+Classe :
+
+NOM :
+
+\end{doublespace}
+Prénom :
+\end{header}
+
+\begin{enumerate}
+\item Rappeler la définition d'une solution.
+Quand peut-on qualifier une solution de solution aqueuse ?
+
+{\color{bleu_f}
+Une solution est un mélange liquide homogène constitué d'un solvant (le constituant majoritaire) et d'un ou plusieurs soluté(s) (les espèces dissoutes).
+
+On parle de solution aqueuse quand le solvant est l'eau.
+}
+\vfill
+
+\item Rappeler la formule donnant la concentration massique d'une solution en donnant les unités et la signification de chaque grandeur.
+
+{\color{bleu_f}
+La concentration massique notée $C_\mathrm{m}$ d'un soluté dans une solution exprimée en gramme par litre est donnée par :
+\begin{equation}
+C_\mathrm{m} = \frac{m_\mathrm{soluté}}{V_\mathrm{solution}},
+\nonumber
+\end{equation}
+où $m_\mathrm{soluté}$ est la masse de soluté dissout exprimée en gramme et $V_\mathrm{solution}$ le volume total de solution exprimé en litre.
+}
+\vfill
+
+\item On ajoute de l'eau à une solution de sulfate de cuivre.
+Donner le nom de la manipulation réalisée.
+La solution obtenue est elle plus ou moins concentrée que la solution initiale ?
+
+{\color{bleu_f}
+C'est une dilution.
+
+La solution obtenue est moins concentrée que la solution initiale.
+}
+\vfill
+
+\item Parmi la liste ci-dessous, choisir le matériel et la verrerie à utiliser pour préparer par dissolution \unit{100}{mL} d'une solution aqueuse de chlorure de sodium à \unit{9{,}0}{g/L}.
+\label{quest:dissolution}
+\begin{multicols}{2}
+\begin{itemize}
+\item[{\color{bleu_f}\xmark}] pipette jaugée \unit{20}{mL} ;
+\item[{\color{bleu_f}\cmark}] pissette d'eau distillée ;
+\item[{\color{bleu_f}\xmark}] éprouvette graduée \unit{100}{mL} ;
+\item[{\color{bleu_f}\cmark}] fiole jaugée \unit{100}{mL} ;
+\item[{\color{bleu_f}\cmark}] balance électronique ;
+\item[{\color{bleu_f}\cmark}] spatule métallique ;
+\item[{\color{bleu_f}\xmark}] bécher \unit{100}{mL} ;
+\item[{\color{bleu_f}\cmark}] entonnoir ;
+\item[{\color{bleu_f}\cmark}] coupelle de pesée ;
+\item[{\color{bleu_f}\xmark}] burette graduée.
+\end{itemize}
+\end{multicols}
+
+\item Calculer la masse de chlorure de sodium à peser pour préparer la solution de la question~\ref{quest:dissolution}.
+La formule littérale est attendue, ainsi que le détail des conversions.
+
+{\color{bleu_f}
+Il faut convertir le volume en litre :
+\[
+V = \unit{100}{mL} = \unit{0{,}100}{L}.
+\]
+Puisqu'il s'agit d'une dissolution, on utilise ensuite la relation 
+\begin{equation}
+C_\mathrm{m} = \frac{m_\mathrm{soluté}}{V_\mathrm{solution}},
+\nonumber
+\end{equation}
+qui permet de calculer la masse $m$ de sel à peser :
+\[
+m = C_\mathrm{m} \times V = 9{,}0 \times 0{,}100 = \unit{9{,}0}{g}.
+\]
+Il faut peser $\unit{9{,}0}{g}$ de chlorure de sodium.
+}
+\vfill
+\end{enumerate}
+
+\end{document}

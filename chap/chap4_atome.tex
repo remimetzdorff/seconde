@@ -1,0 +1,177 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+\usepackage{pdfpages}
+
+
+%\cfoot{} 													% if no page number is needed
+\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Chapitre 4 -- Le noyau de l'atome
+\end{header}
+
+
+\section{Le modèle de l'atome au collège}
+
+\begin{figure}[h]
+\center
+\includegraphics[scale=0.85]{images/atome.png}
+\end{figure}
+
+Les constituants du noyau sont les nucléons (protons et neutrons).
+
+L'atome est neutre :
+\begin{itemize}
+\item[•] il y a autant de charges positives que de charges négatives ;
+\item[•] il y a autant de protons que d'électrons.
+\end{itemize}
+
+\section{Écriture conventionnelle}
+
+\begin{definition}
+Pour représenter le noyau d'un atome de symbole X, on utilise la notation
+{\Huge \bf
+\[
+^\text{A} _\text{Z} \text{X}
+\]
+}
+\begin{itemize}
+\begin{spacing}{1.5}
+\item[•] \textbf{Z} est le nombre de \underline{\phantom{protons protons}}, aussi appelé \underline{\phantom{numéro atomique numéro atomique}} ;
+\end{spacing}
+\item[•] \textbf{A} est le nombre de \underline{\phantom{nucléons nucléons}}, aussi appelé \underline{\phantom{nombre de masse nombre de masse}}.
+\end{itemize}
+\end{definition}
+
+\begin{itemize}
+\item[•] \emph{L'atome représenté ci-dessus est le lithium et son symbole est Li.
+Représente le noyau de cet atome en utilisant l'écriture conventionnelle.}
+\end{itemize}
+
+\section{Quelle est la taille d'un atome ?}
+
+\begin{definition}
+Ordres de grandeur
+\begin{itemize}
+\item[•] Un atome mesure environ $\unit{10^{-10}}{m}$.
+\item[•] Son noyau mesure environ $\unit{10^{-15}}{m}$.
+\end{itemize}
+\end{definition}
+
+\begin{figure}[h]
+\center
+\includegraphics[scale=0.03]{images/qr_how_small_atoms_are.png}
+\caption{Et si chaque atome avait la taille d'une myrtille... Une vidéo pour essayer de se représenter la taille d'un atome : \href{https://tinyurl.com/yygmqyqs}{https://tinyurl.com/yygmqyqs}.}
+\end{figure}
+
+\begin{itemize}
+\item[•] \emph{Combien de fois le noyau est-il plus petit que l'atome ?}
+
+{\color{white} $10^5$}
+
+{\color{white} $10^5$}
+
+\item[•] \emph{Le schéma du début du cours est-il à l'échelle ?}
+
+{\color{white} Non}
+
+{\color{white} Non}
+
+\end{itemize}
+
+\section{Quelle est la masse d'un atome ?}
+
+\begin{center}
+\begin{tabular}{l|c|c|c}
+\textbf{Nom de la particule} & Neutron & Proton & Électron \\
+\hline
+\textbf{Masse} & $m_\mathrm{n} = \unit{1{,}675\times 10^{-27}}{\kilo\gram}$  & $m_\mathrm{p} = \unit{1{,}673\times 10^{-27}}{\kilo\gram}$ & $m_\mathrm{e} = \unit{9{,}1\times 10^{-31}}{\kilo\gram}$
+\end{tabular}
+
+\vspace{\baselineskip} \vspace{\baselineskip}
+
+
+\end{center}
+
+\begin{itemize}
+\item[•] \emph{Que remarque-t-on en comparant la masse d'un proton avec celle d'un neutron ?}
+
+{\color{white} $m_\mathrm{p} \approx m_\mathrm{n}$}
+
+{\color{white} $m_\mathrm{p} \approx m_\mathrm{n}$}
+
+\item[•] \emph{Que dire de la masse d'un électron par rapport à celle d'un nucléon ?}
+
+{\color{white} $m_\mathrm{e} \ll m_\mathrm{nucléon}$}
+
+{\color{white} $m_\mathrm{e} \ll m_\mathrm{nucléon}$}
+
+\item[•] \emph{En utilisant les valeurs les plus précises possible, comparer la masse de l'atome de lithium représenté au début du cours avec celle de son noyau.
+Pourquoi le nombre de nucléons est-il également appelé nombre de masse ?}
+\end{itemize}
+
+\newpage
+
+\section{Des particules électriquement chargées}
+
+La charge électrique est une propriété fondamentale des particules qui composent l'atome.
+Elle se note $q$ et son unité est le coulomb (C).
+\begin{center}
+\begin{tabular}{l|c|c|c}
+\textbf{Nom de la particule} & Neutron & Proton & Électron \\
+\hline
+\textbf{Charge électrique} 	& neutre 	& positive 	& négative \\
+							& $q_\mathrm{n} = \unit{0}{C}$ & $q_\mathrm{p} = \unit{+1{,}60\times10^{-19}}{C}$ & $q_\mathrm{e} = \unit{-1{,}60\times10^{-19}}{C}$
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item[•] \emph{Comparer la charge électrique de l'électron avec celle du proton.}
+
+\textcolor{white}{opposée}
+
+\textcolor{white}{opposée}
+\end{itemize}
+
+La charge électrique $\unit{1{,}60\times10^{-19}}{C}$ est appelée charge électrique élémentaire et on la note $e$ :
+\[
+e = \unit{1{,}60\times10^{-19}}{C}.
+\]
+La charge électrique du proton est donc $q_\mathrm{p} = +e$ et celle de l'électron est $q_\mathrm{e} = -e$.
+
+\begin{itemize}
+\item[•] \emph{En prenant l'exemple de l'atome de lithium, expliquer pourquoi l'atome est neutre.}
+
+\textcolor{white}{charge totale = 0 C}
+
+\textcolor{white}{charge totale = 0 C}
+\end{itemize}
+
+\section{Formation d'ions monoatomiques}
+
+Parfois un atome peut gagner ou perdre un ou plusieurs électrons pour former un ion.
+C'est le cas du lithium qui perd facilement un électron.
+\begin{itemize}
+\item[•] \emph{Quelle est la charge électrique de cet ion ?}
+
+{\color{white} $q_\mathrm{p} = +e$}
+
+{\color{white} $q_\mathrm{p} = +e$}
+
+\item[•] \emph{S'agit-il d'un cation ou d'un anion ?}
+
+{\color{white} Cation}
+
+{\color{white} Cation}
+
+\item[•] \emph{Quelle est la formule chimique de cet ion ?}
+\end{itemize}
+
+\includepdf[pages=-]{chap4_exos.pdf}
+
+
+\end{document}

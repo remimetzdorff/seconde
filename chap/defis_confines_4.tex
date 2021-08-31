@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+\usepackage{pythontex}
+
+\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Les défis confinés -- Épisode 4
+\end{header}
+
+\section*{Un programme pour calculer la masse d'un atome}
+
+\begin{pyverbatim}
+masse_nucleon = 1.67e-27    # masse d'un nucléon en kg
+masse_electron = 9.1e-31    # masse d'un électron en kg
+
+Z = 6                       # nombre de protons ou numéro atomique
+A = 14                      # nombre de nucléons ou nombre de masse
+
+masse = A * masse_nucleon
+
+print("La masse de l'atome est ", masse, " kg")
+\end{pyverbatim}
+
+Le programme \texttt{masse\_atomique.py} ci-dessus peut être exécuté en utilisant l'environnement Python \href{https://www.lelivrescolaire.fr/outils/console-python}{https://www.lelivrescolaire.fr/outils/console-python}.
+Pour cela, copie-colle le contenu du fichier \texttt{masse\_atomique.py} dans la fenêtre gauche de l'environnement python (ouvre le fichier avec un éditeur de texte comme Notepad par exemple).
+Exécute le programme en cliquant sur \og Voir le résultat \fg{} ou en appuyant simultanément sur les touches \texttt{CTRL} et \texttt{ENTRÉE}.
+L'affichage des résultats du programme doit apparaitre dans la fenêtre de droite (si ce n'est pas le cas, cliquer sur \og TEXTE \fg{}).
+
+\emph{Si l'utilisation de Python n'est pas possible chez toi, tu peux tout de même faire le défi à l'exception de la question \ref{quest:python} en effectuant les calculs à la calculatrice et en utilisant les consignes en italiques pour les questions \ref{quest:alt1}, \ref{quest:alt2} et \ref{quest:alt3}.}
+
+\begin{enumerate}
+\item À ton avis, à quoi sert le programme \texttt{masse\_atome.py} ci-dessus ?
+
+\item Représenter le noyau de l'atome utilisé dans le programme en utilisant l'écriture conventionnelle.
+
+\item
+\label{quest:alt1}
+Modifier le programme pour qu'il calcule et affiche aussi la masse du nuage électronique de cet atome, c'est-à-dire à la masse des électrons qui entourent le noyau.
+Quelle est la masse du nuage électronique de l'atome utilisé dans le programme ?
+
+\emph{Calculer la masse du nuage électronique de l'atome utilisé dans le programme.}
+
+\item
+\label{quest:alt2}
+En utilisant les valeurs données par le programme, comparer la masse de l'atome à celle de son nuage électronique.
+
+\emph{En utilisant les valeurs calculées à l'aide d'une calculatrice, comparer la masse de l'atome à celle de son nuage électronique.}
+
+\item
+\label{quest:python}
+Modifier le programme pour qu'il compare la masse de l'atome à celle de son nuage électronique.
+Le programme devra afficher la phrase \og L'atome est ... fois plus lourd que son nuage électronique. \fg{}
+
+\item
+\label{quest:alt3}
+Utilise ton programme pour comparer la masse de l'atome de fer $_\text{26}^\text{56}\text{Fe}$ et celle de son nuage électronique.
+Recopie la phrase affichée par le programme sur ta feuille.
+
+\emph{Même question mais en utilisant les valeurs trouvées avec la calculatrice.}
+\end{enumerate}
+\textbf{Remarque :} Pour l'écriture des puissances de 10, Python, tout comme ta calculatrice utilise \texttt{e} pour remplacer $\times 10$.
+Ainsi, $9{,}1\times10^{-31}$ devient \texttt{9.1e-31} dans le programme.
+
+\end{document}

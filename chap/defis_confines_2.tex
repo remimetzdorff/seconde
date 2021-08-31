@@ -1,0 +1,130 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+%\usepackage{rmexocptce}																% for DS with cptce eval
+\usepackage{pythontex}
+
+%\cfoot{}	 													% if no page number is needed
+\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Les défis confinés -- Épisode 2
+\end{header}
+
+\section*{Combien d'atomes de fer dans un clou ?}
+
+\begin{figure}[h]
+\center
+\includegraphics[scale=0.05]{images/qr_lqc_semoule.png}
+\end{figure}
+
+Regarde la vidéo en cliquant sur ce lien : \href{https://www.youtube.com/watch?v=xbgqRGvDJ2I}{https://www.youtube.com/watch?v=xbgqRGvDJ2I} ou en scannant le QR code ci-dessus.
+
+Dans les commentaires de la vidéo, on peut lire approximativement cette phrase :
+\og Suffit de diviser 500 grammes par la masse d'un grain de semoule en gramme \fg{}.
+
+\begin{enumerate}
+\item Quel est le nombre de grains de semoule dans un paquet de \unit{500}{g} ?
+
+\emph{Donnée : la masse d'un grain de semoule est $m_\mathrm{grain}=\unit{1{,}25}{mg}$.}
+
+\item Ce résultat est-il en accord avec celui obtenu dans la vidéo ?
+
+\item Quel est le nombre d'atomes de fer dans un clou de masse \unit{4{,}2}{g} ?
+
+\emph{Donnée : la masse d'un atome de fer est $m_\mathrm{Fe} = \unit{9{,}3\times 10^{-26}}{kg}$.}
+
+\item Si l'on pouvait agrandir ce clou suffisamment, serait-il possible de compter tous les atomes de ce clou ?
+Justifier.
+\end{enumerate}
+
+\section*{Construire un atome}
+
+Cet activité est à faire en utilisant l'application construire un atome, accessible en scannant le code ci-dessous ou en cliquant sur le lien suivant : \href{https://phet.colorado.edu/sims/html/build-an-atom/latest/build-an-atom_fr.html}{https://phet.colorado.edu/sims/html/build-an-atom/latest/build-an-atom\_fr.html}.
+
+\begin{figure}[h]
+\center
+\includegraphics[scale=0.05]{images/qr_phetcolorado_atom.png}
+\end{figure}
+
+\begin{enumerate}
+\item Un atome d'hélium est formé de deux protons, deux neutrons et deux électrons.
+Construire un atome d'hélium.
+Quel est le symbole de cet élément ?
+
+\item Construire l'atome de carbone formé de deux neutrons.
+Décrire la composition de cet atome.
+
+\item Après avoir coché la case \og Afficher la stabilité / l'instabilité \fg{}, construire un atome de béryllium stable.
+Décrire la composition de cet atome.
+
+\item À quoi correspond le nombre de masse affiché après avoir cliqué sur le signe \og + \fg{} du panneau du même nom ?
+
+\item Un atome de fluor forme facilement un anion fluorure $\fluorure$.
+Comment fabriquer cet ion ?
+\end{enumerate}
+
+\section*{Tracer une courbe avec python\texttrademark{}}
+
+\begin{figure}[h]
+\center
+\includegraphics[scale=0.05]{images/qr_console_python.png}
+\end{figure}
+Il est possible d'utiliser python en ligne.
+Pour cela, scanner le QR code ci-dessus ou cliquer sur le lien suivant : \href{https://www.lelivrescolaire.fr/outils/console-python}{https://www.lelivrescolaire.fr/outils/console-python}.
+Vous y trouverez un environnement de travail similaire à celui d'edupython utilisé en classe.
+
+On souhaite retracer la courbe qui figure à la fin du DM des vacances de la Toussaint à partir des données de concentration et de masse volumique de la saumure représentées dans le tableau ci-dessous.
+\begin{table}[h]
+\center
+\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c}
+$C_\mathrm{m}$ (g/L) & 0 & 31 & 62 & 96 & 130 & 166 & 204 & 243 & 283 & 311 \\
+\hline
+$\rho$ (kg/L) & 1{,}000&1{,}020&1{,}041&1{,}063&1{,}086&1{,}109&1{,}132&1{,}156&1{,}180&1{,}197 \\
+\end{tabular}
+\end{table}
+
+Le programme utilisé pour tracer la courbe est similaire à celui du fichier \texttt{densite\_saumure.py} :
+\begin{pyverbatim}[stderr][numbers=left]
+import matplotlib.pyplot as plt
+
+Cm  = [0, 31, 62, 96, 130, 166, 204, 243, 283, 311]
+rho = [1.000,1.020,1.041,1.063,1.086,1.109,1.132,1.156,1.180,1.197]
+
+plt.plot(Cm, rho, color="yellow")
+
+plt.xlabel("Concentration massique en sel")
+plt.ylabel("Masse volumique (kg/L)")
+plt.title("Le titre")
+
+plt.grid()
+plt.show()
+\end{pyverbatim}
+
+\begin{enumerate}
+\item Copie-colle le contenu du fichier \texttt{densite\_saumure.py} dans la fenêtre gauche de l'environnement python (ouvre le fichier avec un éditeur de texte comme Notepad par exemple).
+Exécute le programme en cliquant sur \og Voir le résultat \fg{} ou en appuyant simultanément sur les touches \texttt{CTRL} et \texttt{ENTRÉE}.
+Un graphique devrait apparaitre dans la fenêtre de droite (si ce n'est pas le cas, cliquer sur \og GRAPH \fg{}).
+
+\item Que reconnais-tu aux lignes 3 et 4 du programme ?
+
+\item À ton avis, à quoi sert la ligne 6 ?
+
+\item En jaune, la courbe n'est pas bien visible.
+Modifie le programme pour que la courbe soit rouge (attention python ne peut interpréter que l'anglais !).
+
+\item Le nom de l'axe des abscisses ne comporte pas d'unité.
+C'est mal !
+Rectifie cet oubli.
+
+\item Modifie le programme pour que le titre du graphique soit \og Évolution de la masse volumique de la saumure \fg{} suivi de vos initiales.
+
+\emph{Exemple : pour ton professeur de physique-chimie, cela donnerait \og Évolution de la masse volumique de la saumure - RM. \fg{}}
+
+\item Copie-colle la courbe obtenue dans la conversation dédiée aux défis confinés 2 sur Teams.
+\end{enumerate}
+
+
+\end{document}

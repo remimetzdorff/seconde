@@ -1,0 +1,84 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+%\textcolor{red_f}{1s}\textsuperscript{2} \textcolor{green_f}{2}, \textcolor{bleu_f}{3}
+
+\begin{document}
+
+\section*{Le tableau périodique des éléments}
+
+\begin{center}
+\newcommand{\y}{\linewidth/8.01}
+\newcommand{\z}{\y/2}
+\begin{tikzpicture}
+\foreach \i in {0,1, ..., 7} {
+  \draw (\i*\y, 0) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1, ..., 7} {
+  \draw (\i*\y, \y) rectangle ++ (\y, \y);
+}
+\draw (0, 2*\y) rectangle ++ (\y, \y);
+\draw (7*\y, 2*\y) rectangle ++ (\y, \y);
+
+\draw [line width=3pt] (2\y, 0) -- ++ (0, 2\y);
+
+\draw (\z, 3*\y) node [below] {Hydrogène};
+\draw (\z, 2.5*\y) node [] {\Large $\mathrm{H}$};
+\draw (\z, 2*\y) node [below] {Lithium};
+\draw (\z, 1.5*\y) node [] {\Large $\mathrm{Li}$};
+\draw (\z, 1*\y) node [below] {Sodium};
+\draw (\z, .5*\y) node [] {\Large $\mathrm{Na}$};
+
+\draw (1.5\y, 2*\y) node [below] {Béryllium};
+\draw (1.5\y, 1.5*\y) node [] {\Large $\mathrm{Be}$};
+\draw (1.5\y, 1*\y) node [below] {Magnésium};
+\draw (1.5\y, .5*\y) node [] {\Large $\mathrm{Mg}$};
+
+\draw (2.5\y, 2*\y) node [below] {Bore};
+\draw (2.5\y, 1.5*\y) node [] {\Large $\mathrm{B}$};
+\draw (2.5\y, 1*\y) node [below] {Aluminium};
+\draw (2.5\y, .5*\y) node [] {\Large $\mathrm{Al}$};
+
+\draw (3.5\y, 2*\y) node [below] {Carbone};
+\draw (3.5\y, 1.5*\y) node [] {\Large $\mathrm{C}$};
+\draw (3.5\y, 1*\y) node [below] {Silicium};
+\draw (3.5\y, .5*\y) node [] {\Large $\mathrm{Si}$};
+
+\draw (4.5\y, 2*\y) node [below] {Azote};
+\draw (4.5\y, 1.5*\y) node [] {\Large $\mathrm{N}$};
+\draw (4.5\y, 1*\y) node [below] {Phosphore};
+\draw (4.5\y, .5*\y) node [] {\Large $\mathrm{P}$};
+
+\draw (5.5\y, 2*\y) node [below] {Oxygène};
+\draw (5.5\y, 1.5*\y) node [] {\Large $\mathrm{O}$};
+\draw (5.5\y, 1*\y) node [below] {Soufre};
+\draw (5.5\y, .5*\y) node [] {\Large $\mathrm{S}$};
+
+\draw (6.5\y, 2*\y) node [below] {Fluor};
+\draw (6.5\y, 1.5*\y) node [] {\Large $\mathrm{F}$};
+\draw (6.5\y, 1*\y) node [below] {Chlore};
+\draw (6.5\y, .5*\y) node [] {\Large $\mathrm{Cl}$};
+
+\draw (7.5\y, 3*\y) node [below, color=bleu_f] {Hélium};
+\draw (7.5\y, 2.5*\y) node [color=bleu_f] {\Large $\mathrm{He}$};
+\draw (7.5\y, 2*\y) node [below, color=bleu_f] {Néon};
+\draw (7.5\y, 1.5*\y) node [color=bleu_f] {\Large $\mathrm{Ne}$};
+\draw (7.5\y, 1*\y) node [below, color=bleu_f] {Argon};
+\draw (7.5\y, .5*\y) node [color=bleu_f] {\Large $\mathrm{Ar}$};
+
+\draw (.5\y, 3\y) node [above, color=red_f] {\large\textbf{1}};
+\draw (1.5\y, 2\y) node [above, color=red_f] {\large\textbf{2}};
+\draw (7.5\y, 3\y) node [above, color=red_f] {\large\textbf{18}};
+\foreach \i in {13,14,...,17} {
+  \draw (\i*\y-10.5\y, 2\y) node [above, color=red_f] {\large\textbf{\i}};
+}
+\end{tikzpicture}
+\end{center}
+
+\end{document}
+

@@ -1,0 +1,222 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+%\textcolor{red_f}{1s}\textsuperscript{2} \textcolor{green_f}{2}, \textcolor{bleu_f}{3}
+
+\begin{document}
+
+\begin{header}
+Chapitre 7 -- Vers des entités plus stables
+\end{header}
+
+Avec ce chapitre on, va répondre à deux questions :
+\begin{itemize}
+\item[•] Dans un atome, comment se répartissent les électrons autour du noyau ?
+\item[•] Pourquoi certains atomes forment-ils des ions ou des molécules ?
+\end{itemize}
+
+\section{Configuration électronique}
+
+Des capsules pour voir le cours en vidéo : 
+\begin{itemize}
+\item[•] \href{https://youtu.be/pg1PdFSieT4}{https://youtu.be/pg1PdFSieT4} ;
+\item[•] \href{https://youtu.be/YZ03y\_NNbcM}{https://youtu.be/YZ03y\_NNbcM}.
+\end{itemize}
+
+\subsection{Établir la configuration électronique d'un atome}
+
+Les électrons d'un atome se placent sur les \textbf{couches} notées \textcolor{red_f}{1}, \textcolor{green_f}{2}, \textcolor{bleu_f}{3}, etc.
+Les couches sont composées d'une ou plusieurs \textbf{sous-couches} :
+\begin{itemize}
+\item[•] une sous-couches s qui contiennent au maximum 2 électrons ;
+\item[•] une sous-couches p qui contiennent au maximum 6 électrons ;
+\item[•] ...
+\end{itemize}
+
+On établit la \textbf{configuration électronique} en remplissant les couches et sous-couches d'un atome avec ses électrons dans un ordre précis :
+\begin{center}
+\textcolor{red_f}{1s} \textrightarrow{} \textcolor{green_f}{2s} \textrightarrow{} \textcolor{green_f}{2p} \textrightarrow{} \textcolor{bleu_f}{3s} \textrightarrow{} \textcolor{bleu_f}{3p} \textrightarrow{} ...
+\end{center}
+
+Les électrons de la \textbf{dernière couche} sont appelés \textbf{électrons de valence}.
+
+\subsection{Des exemples pour comprendre}
+
+\begin{multicols}{2}
+L'atome d'aluminium a un numéro atomique $Z = 13$, donc son noyau possède 13 protons.
+Un atome est neutre donc l'atome d'aluminium a 13 électrons.
+On remplit les couches et les sous-couches en suivant les règles ci-dessus : sa configuration électronique est donc :
+\begin{center}
+\textcolor{red_f}{1s}\textsuperscript{2} \textcolor{green_f}{2s}\textsuperscript{2} \textcolor{green_f}{2p}\textsuperscript{6} \textcolor{bleu_f}{3s}\textsuperscript{2} \textcolor{bleu_f}{3p}\textsuperscript{1}
+\end{center}
+Il y a 3 électrons sur la dernière couche donc il a 3 électrons de valence.
+
+
+\center
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+\draw (O) node [below] {Noyau};
+\draw (O) node {$\bullet$};
+
+\draw (30:1) node [left] {\textcolor{red_f}{1s}};
+\draw [color=red_f, dotted] (O) circle (1);
+\foreach \a in {90,270} {
+  \draw (\a:1) node [color=red_f] {$\bullet$};
+}
+
+\draw (30:2) node [left] {\textcolor{green_f}{2s}};
+\draw (30:2.1) node [right] {\textcolor{green_f}{2p}};
+\draw [color=green_f, dotted] (O) circle (2);
+\foreach \a in {90,270} {
+  \draw (\a:2) node [color=green_f] {$\bullet$};
+}
+\draw [color=green_f, dashed] (O) circle (2.1);
+\foreach \a in {0,60,...,360} {
+  \draw (\a:2.1) node [color=green_f] {$\bullet$};
+}
+
+\draw (30:3) node [left] {\textcolor{bleu_f}{3s}};
+\draw (30:3.1) node [right] {\textcolor{bleu_f}{3p}};
+\draw [color=bleu_f, dotted] (O) circle (3);
+\foreach \a in {90,270} {
+  \draw (\a:3) node [color=bleu_f] {$\bullet$};
+}
+\draw [color=bleu_f, dashed] (O) circle (3.1);
+\foreach \a in {0} {
+  \draw (\a:3.1) node [color=bleu_f] {$\bullet$};
+}
+\end{tikzpicture}
+\end{multicols}
+
+\emph{Établir la configuration électronique de l'hydrogène ($Z=1$), du carbone ($Z=6$) de l'oxygène ($Z=8$) et du phosphore ($Z=15$).}
+
+\section{Le tableau périodique des éléments}
+
+Cf. activité 1 page 66.
+
+\begin{center}
+\newcommand{\y}{\linewidth/8.01}
+\newcommand{\z}{\y/2}
+\begin{tikzpicture}
+\foreach \i in {0,1, ..., 7} {
+  \draw (\i*\y, 0) rectangle ++ (\y, \y);
+}
+\foreach \i in {0,1, ..., 7} {
+  \draw (\i*\y, \y) rectangle ++ (\y, \y);
+}
+\draw (0, 2*\y) rectangle ++ (\y, \y);
+\draw (7*\y, 2*\y) rectangle ++ (\y, \y);
+
+\draw [line width=3pt] (2\y, 0) -- ++ (0, 2\y);
+
+\draw (\z, 3*\y) node [below] {Hydrogène};
+\draw (\z, 2.5*\y) node [] {\Large $\mathrm{_1 H}$};
+\draw (\z, 2*\y) node [below] {Lithium};
+\draw (\z, 1.5*\y) node [] {\Large $\mathrm{_3 Li}$};
+\draw (\z, 1*\y) node [below] {Sodium};
+\draw (\z, .5*\y) node [] {\Large $\mathrm{_{11} Na}$};
+
+\draw (1.5\y, 2*\y) node [below] {Béryllium};
+\draw (1.5\y, 1.5*\y) node [] {\Large $\mathrm{_4 Be}$};
+\draw (1.5\y, 1*\y) node [below] {Magnésium};
+\draw (1.5\y, .5*\y) node [] {\Large $\mathrm{_{12} Mg}$};
+
+\draw (2.5\y, 2*\y) node [below] {Bore};
+\draw (2.5\y, 1.5*\y) node [] {\Large $\mathrm{_5 B}$};
+\draw (2.5\y, 1*\y) node [below] {Aluminium};
+\draw (2.5\y, .5*\y) node [] {\Large $\mathrm{_{13} Al}$};
+
+\draw (3.5\y, 2*\y) node [below] {Carbone};
+\draw (3.5\y, 1.5*\y) node [] {\Large $\mathrm{_6 C}$};
+\draw (3.5\y, 1*\y) node [below] {Silicium};
+\draw (3.5\y, .5*\y) node [] {\Large $\mathrm{_{14} Si}$};
+
+\draw (4.5\y, 2*\y) node [below] {Azote};
+\draw (4.5\y, 1.5*\y) node [] {\Large $\mathrm{_7 N}$};
+\draw (4.5\y, 1*\y) node [below] {Phosphore};
+\draw (4.5\y, .5*\y) node [] {\Large $\mathrm{_{15} P}$};
+
+\draw (5.5\y, 2*\y) node [below] {Oxygène};
+\draw (5.5\y, 1.5*\y) node [] {\Large $\mathrm{_8 O}$};
+\draw (5.5\y, 1*\y) node [below] {Soufre};
+\draw (5.5\y, .5*\y) node [] {\Large $\mathrm{_{16} S}$};
+
+\draw (6.5\y, 2*\y) node [below] {Fluor};
+\draw (6.5\y, 1.5*\y) node [] {\Large $\mathrm{_9 F}$};
+\draw (6.5\y, 1*\y) node [below] {Chlore};
+\draw (6.5\y, .5*\y) node [] {\Large $\mathrm{_{17} Cl}$};
+
+\draw (7.5\y, 3*\y) node [below, color=bleu_f] {Hélium};
+\draw (7.5\y, 2.5*\y) node [color=bleu_f] {\Large $\mathrm{_2 He}$};
+\draw (7.5\y, 2*\y) node [below, color=bleu_f] {Néon};
+\draw (7.5\y, 1.5*\y) node [color=bleu_f] {\Large $\mathrm{_{10} Ne}$};
+\draw (7.5\y, 1*\y) node [below, color=bleu_f] {Argon};
+\draw (7.5\y, .5*\y) node [color=bleu_f] {\Large $\mathrm{_{18} Ar}$};
+
+\draw (.5\y, 3\y) node [above, color=red_f] {\large\textbf{1}};
+\draw (1.5\y, 2\y) node [above, color=red_f] {\large\textbf{2}};
+\draw (7.5\y, 3\y) node [above, color=red_f] {\large\textbf{18}};
+\foreach \i in {13,14,...,17} {
+  \draw (\i*\y-10.5\y, 2\y) node [above, color=red_f] {\large\textbf{\i}};
+}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\begin{spacing}{1.5}
+\item[•] Les lignes du tableau sont aussi appelées \textcolor{gray_c}{\underline{\phantom{périodes périodes}}}.
+
+\item[•] Les colonnes du tableau sont aussi appelées  \textcolor{gray_c}{\underline{\phantom{familles familles}}}.
+
+\item[•] Les atomes sont rangés par ordre de numéro atomique \textcolor{gray_c}{\underline{\phantom{croissant croissant}}}.
+
+\item[•] Les éléments d'une même famille ont le même nombre \textcolor{gray_c}{\underline{\phantom{d'électrons de valence d'électrons}}}.
+
+\item[•] Les éléments d'une même période ont la même \textcolor{gray_c}{\underline{\phantom{couche externe couche externe}}}.
+\end{spacing}
+\end{enumerate}
+
+\emph{En utilisant le tableau, déterminer le nombre d'électrons de valence de l'azote :}
+
+\emph{Déterminer le symbole de l'élément dont la configuration électronique est 1s\textsuperscript{2} 2s\textsuperscript{2} 2p\textsuperscript{6} 3s\textsuperscript{2} : }
+
+\section{Vers des entités plus stables}
+
+La dernière couche électronique des \textbf{gaz nobles} est pleine, ils sont \textbf{stables}.
+
+\subsection{Formation d'ions}
+
+Un élément peut \textbf{perdre ou gagner des électrons} pour avoir la \textbf{même configuration électronique que le gaz noble le plus proche}.
+
+\subsubsection*{Exemple : Le fluor}
+La configuration électronique du fluor ($Z=9$) est 1s\textsuperscript{2} 2s\textsuperscript{2} 2p\textsuperscript{5}.
+Pour remplir sa dernière couche, il peut gagner un électron et former l'ion fluorure $\mathrm{F^-}$ qui a la même configuration électronique que le néon : 1s\textsuperscript{2} 2s\textsuperscript{2} 2p\textsuperscript{6}.
+
+\emph{Le sodium a pour configuration électronique 1s\textsuperscript{2} 2s\textsuperscript{2} 2p\textsuperscript{6} 3s\textsuperscript{1}.
+Déterminer l'ion stable qu'il peut former.}
+
+\subsection{Formation de molécules, schéma de Lewis}
+
+Cf. activité 4 page 69 et \href{https://youtu.be/ejE6BlQlcbw}{https://youtu.be/ejE6BlQlcbw}.
+
+\noindent
+\subsubsection*{Exemple : L'eau $\mathrm{H_2 O}$}
+
+\begin{center}
+\begin{tikzpicture}
+\draw [color=white] (0,1) -- ++ (.99\linewidth, 0);
+\foreach \i in {0,1,...,10} {
+  \draw [color=gray_c] (0,-\i) -- ++ (.99\linewidth, 0);
+}
+
+\end{tikzpicture}
+\end{center}
+
+\end{document}
+
+\textcolor{red_f}{1s}\textsuperscript{2} \textcolor{green_f}{2s}\textsuperscript{2} \textcolor{green_f}{2p}\textsuperscript{6} \textcolor{bleu_f}{3s}\textsuperscript{2} \textcolor{bleu_f}{3p}\textsuperscript{6}

@@ -1,0 +1,154 @@
+\documentclass[12pt,a4paper, fleqn]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+\renewcommand\arraystretch{1.}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Interrogation -- Chapitre 6
+
+Correction
+\end{header}
+
+\section*{Exercice 1 -- Catapultage d'un avion de chasse}
+
+\begin{enumerate}
+\item Le système étudié est l'avion de chasse.
+
+\item
+
+Le référentiel choisi dans la vidéo est celui lié au porte avion.
+\end{enumerate}
+
+{\color{gray_f}
+Le schéma ci-dessous est une chronophotographie de l'avion lors du décollage.
+Les positions de l'avion sont relevées toutes les \unit{0{,}4}{s}.
+Le schéma est à l'échelle 1/1000 : \unit{1}{cm} sur le schéma = \unit{10}{m} en vrai.}
+
+\begin{center}
+\begin{tikzpicture}
+
+\foreach \t in {0, 1, ..., 5} {
+  \newcommand{\temps}{\t/2.5}
+  \draw (3.5*\temps*\temps/2, 0) node {$\bullet$};
+   \coordinate (F) at (3.5*\temps*\temps/2, 0);
+}
+\draw (0,0) node [above left] {$M_0$};
+\foreach \t in {1, 2, ..., 5} {
+  \newcommand{\temps}{\t/2.5}
+  \draw (3.5*\temps*\temps/2, 0) node [above] {$M_\t$};
+}
+
+\draw (F) ++ (5:7*.4) node {$\bullet$} ++ (10:7*.4) node {$\bullet$} ++ (15:7*.4) node {$\bullet$};
+\draw (F) ++ (5:7*.4) node [above] {$M_6$} ++ (10:7*.4) node [above] {$M_7$} ++ (15:7*.4) node [above] {$M_8$};
+
+\draw [->,>=stealth,green_f, ultra thick] (F) ++ (5:7*.4) --++ (10:3.5) node [midway, below] {$\vec{v_6}$};
+
+\draw [<->, >=stealth, bleu_f] (0,-.5) -- (7.5,-.5) node [midway, below] {catapultage};
+\draw [<-, >=stealth, red_f] (7.5,-.5) -- (15,-.5) node [midway, below] {vol};
+\draw [dashed, red_f] (15,-.5) -- (15.5,-.5);
+
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[resume]
+\item
+
+Pendant le catapultage, l'avion a un mouvement rectiligne et accéléré.
+
+\item Les caractéristiques du vecteur vitesse sont :
+\begin{itemize}
+\item[•] direction ;
+\item[•] sens ;
+\item[•] norme ;
+\item[(•] point de départ).
+\end{itemize}
+Lors du catapultage, la direction ne change pas (horizontale), le sens ne change pas (vers la droite) mais la norme change (la valeur de la vitesse augmente). (et bien sûr le point de départ change aussi, il suit la position de l'avion).
+
+\item Pour calculer la vitesse au point $M_6$, il faut utiliser les points $M_6$ et $M_7$.
+Sur le schéma, on mesure $M_6 M_7$ =  \unit{2\dcoma 8}{cm}.
+Le schéma est à l'échelle 1/1000, donc dans la réalité,  
+\[
+M_6 M_7 = 1000 \times \unit{2\dcoma 8}{cm} = \unit{2800}{cm} = \unit{28}{m}.
+\]
+L'intervalle de temps entre deux positions successives est \unit{0\dcoma4}{s} donc la vitesse au point $M_6$ est :
+\[
+v_6 = \frac{M_6 M_7}{\Delta t} = \frac{28}{0\dcoma4} = \unit{70}{m/s}.
+\]
+
+Il ne reste plus qu'à déterminer la longueur du vecteur à tracer compte tenu de l'échelle indiquée :
+\begin{center}
+\begin{tabular}{c|c}
+\unit{1}{cm} & \unit{20}{m/s} \\
+\hline
+? & \unit{70}{m/s}
+\end{tabular}
+\end{center}
+
+On trace un vecteur de $\frac{1\times 70}{20}=\unit{3\dcoma5}{cm}$ de long (cf schéma).
+
+\item Dans l'introduction, on lit que l'avion atteint une vitesse de \unit{250}{km/h} en fin de catapultage.
+Il faut convertir la valeur trouvée précédemment :
+\[
+v_6 = \unit{70}{m/s} \xrightarrow{\times 3600} \unit{252000}{m/h} \xrightarrow{\div 1000} \unit{252}{km/h}.
+\]
+Cette valeur est très proche de celle donnée dans le texte introductif (\unit{250}{km/h}), la valeur trouvée précédemment est donc cohérente avec l'énoncé.
+
+\item
+\[
+v = \frac{d}{\Delta t} = \frac{3700}{3} \approx \unit{1233}{km/h}
+\]
+La vitesse moyenne de ces avions en vol est \unit{1233}{km/h}.
+\end{enumerate}
+
+\section*{Exercice 2 -- Un classique}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item Le référentiel le plus adapté à l'étude du mouvement de la Terre autour du Soleil et celui lié au Soleil.
+
+\item \textcolor{gray_f}{Identifier les termes qui permettent de qualifier le mouvement de la Terre autour du Soleil :}
+\sout{rectiligne} ; \textbf{circulaire} ; \sout{curviligne} ; \textbf{uniforme} ; \sout{accéléré} ; \sout{décéléré}.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) node [yellow_f] {$\bullet$};
+\draw (0,0) node [yellow_f, above] {Soleil};
+\foreach \x in {0,30,...,360} {
+  \draw (\x-20:2) node [color=bleu_f] {$\bullet$};
+}
+\draw (40:2) node [bleu_f, above right] {Terre};
+\draw [color=bleu_f, dashed] plot [domain=0:360, smooth] (\x-20:2);
+\draw [color=bleu_f, ->, >=stealth] plot [domain=20:50, smooth] (\x:1.5);
+\end{tikzpicture}
+\end{center}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Par exemple :
+\begin{center}
+\begin{tikzpicture}
+\foreach \t in {0,1,...,8} {
+  \draw (-\t*\t/5,0) node {$\bullet$};
+}
+\draw [->,>=stealth] (-64/10-1,.5) -- (-64/10+1,.5) node [midway,above] {Sens du mouvement};
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+
+\section*{Exercice 3 -- Configuration électronique}
+
+\begin{enumerate}
+\item L'atome de silicium a 14 électrons car c'est un atome donc il est neutre : il a autant de charges positives que de charges négatives, \cad{} autant d'électrons que de protons et le numéro atomique indique le nombre de protons.
+
+\item Si (Z=14) : 1s\textsuperscript{2} 2s\textsuperscript{2} 2p\textsuperscript{6} 3s\textsuperscript{2} 3p\textsuperscript{2}
+
+\end{enumerate}
+
+\end{document}

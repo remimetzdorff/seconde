@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+%\usepackage{rmexocptce}																% for DS with cptce eval
+\usepackage{pythontex}
+
+%\cfoot{}	 													% if no page number is needed
+\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Les défis confinés -- Épisode 2
+\end{header}
+
+\section*{Combien d'atomes de fer dans un clou ?}
+
+\begin{enumerate}
+\item Pour trouver efficacement le nombre de grains de semoule dans un paquet de \unit{500}{g}, il faut diviser la masse du paquet par la masse d'un seul grain de semoule, en, faisant attention aux unités.
+\[
+\unit{500}{g} = \unit{500\,000}{mg}
+\]
+donc le nombre de grains de semoule est : 
+\[
+\frac{500\,000}{1{,}25} = 400\,000.
+\]
+Il y a donc 400\,000 grains de semoule dans un paquet de \unit{500}{g}.
+
+\item Ce résultat est proche de celui de la vidéo, on peut dire qu'il est en accord avec le comptage de la vidéo.
+En effet l'écart entre les deux valeur est d'environ \unit{1}{\%}.
+
+\item Le problème est le même que précédemment :
+\[
+\unit{4{,}2}{g} = \unit{0{,}0042}{kg}
+\]
+donc le nombre d'atomes de fer dans un clou est :
+\[
+\frac{0{,}0042}{9{,}3\times 10^{-26}} \approx 4{,}52\times 10^{22}.
+\]
+
+Il y a environ $4{,}52\times 10^{22}$ atomes de fer dans un clou.
+
+\item Même si l'on pouvait les agrandir suffisamment, on ne pourrait pas les compter car il y en a vraiment beaucoup trop.
+En les comptant un par un, au rythme d'un atome par seconde, il faudrait environ 1{,}4 million de milliard d'années.
+C'est long !
+\end{enumerate}
+
+\section*{Construire un atome}
+
+
+\begin{enumerate}
+\item Le symbole de l'hélium est He.
+
+\item Un tel atome de carbone est composé de 6 protons, 2 neutrons (ce qui fait 8 nucléons) et 6 électrons.
+
+Remarque : il y a une erreur dans l'énoncé qui n'empêche cependant pas de répondre à la question.
+L'atome de carbone décrit ci-dessus n'existe pas dans la nature.
+L'atome de carbone le plus abondant sur Terre est en réalité le carbone 12 composé de 6 protons, 6 neutrons (ce qui fait 12 nucléons) et 6 électrons.
+
+\item Le seul atome de béryllium stable est composé de 4 protons, 5 neutrons (donc 9 nucléons) et possède 4 électrons.
+
+\item Le nombre de masse correspond au nombre de protons et de neutrons, c'est à dire au nombre de nucléons.
+
+\item Il suffit d'ajouter un électron à un atome de fluor.
+\end{enumerate}
+
+\section*{Tracer une courbe avec python\texttrademark{}}
+
+
+
+\begin{enumerate}
+\item
+
+\item On reconnait les données de concentration massique et de masse volumique.
+
+\item La ligne 6 permet de tracer la courbe (et de choisir sa couleur, etc.).
+
+\item
+
+\item 
+
+\item 
+
+\item
+\end{enumerate}
+
+
+\end{document}

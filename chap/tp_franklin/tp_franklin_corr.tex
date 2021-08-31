@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Mesurer la taille d'une molécule -- Correction
+\end{header}
+
+Il s'agit ici d'une proposition de correction, mais il existe plusieurs façons de faire.
+
+\section{Hypothèse}
+
+Je pense qu'une molécule d'huile mesure \unit{1}{nm} car je sais que la taille d'un atome est d'environ \unit{0{,}1}{nm} et que sur le modèle de la trioléine, le composant majoritaire de l'huile, on voit que les trois chaines qui forment la molécule sont composées de neuf atomes de carbone et un atome d'oxygène :
+\[
+(9+1) \times \unit{0{,}1}{nm} = \unit{1}{nm}.
+\]
+
+\section{Protocole}
+
+Deux quantités ne sont pas précisées dans le sujet : il faut les déterminer.
+L'ordre dans lequel ces quantités sont estimées n'a pas d'importance pour la suite.
+
+\subsection{Volume contenu dans une petite cuillère d'huile}
+
+Il faut déterminer la quantité d'huile utilisée par Franklin pour son expérience.
+Plusieurs méthodes sont possibles.
+
+\subsubsection{Je connais le volume contenu dans une cuillère à café}
+
+Soit parce que c'est une mesure couramment utilisée dans certaines recettes de cuisine par exemple, ou bien encore parce que je me rappelle des défis confinés 1, je peux dire directement que le volume contenu dans une cuillère à café est d'environ \unit{5}{mL}.
+\[
+V_\mathrm{cac} \approx  \unit{5}{mL}.
+\]
+
+\subsubsection{Mesure du volume contenu dans une cuillère à café}
+
+Je vais mesurer le volume contenu dans une cuillère à café en mesurant à l'aide d'une éprouvette graduée le volume d'eau que contient une cuillère à café.
+
+\paragraph{Matériel :}
+\begin{itemize}
+\item[•] cuillère à café ;
+\item[•] entonnoir ;
+\item[•] éprouvette graduée de \unit{10}{mL}.
+\end{itemize}
+
+\paragraph{Manipulation :}
+\begin{itemize}
+\item[•] Remplir une cuillère à café avec de l'eau.
+\item[•] Verser le contenu de la cuillère dans l'éprouvette graduée.
+\item[•] Lire la valeur du volume.
+\end{itemize}
+(Cette description des étapes de manipulation peut être remplacée par des schémas.)
+
+\paragraph{Observation/mesure :}
+\begin{itemize}
+\item[•] Sur l'éprouvette, on lit que le volume d'eau est \unit{4{,}5}{mL}.
+\end{itemize}
+
+Le volume contenu dans la cuillère à café est donc 
+\[
+V_\mathrm{cac} =  \unit{4{,}5}{mL}.
+\]
+
+\subsubsection{Mesure de la surface de la tache d'huile sur l'étang}
+
+Dans le texte du document 1 on peut lire que la tache d'huile recouvre environ un quart de l'étang.
+Je vais mesurer sur le schéma du document 2 la surface de l'étang et diviser le résultat par quatre pour trouver la surface de la tache d'huile.
+
+Le schéma n'est évidemment pas à l'échelle.
+Avec l'étalon dessiné sur le côté, on peut voir que \unit{1{,}4}{cm} sur le schéma correspond à \unit{20}{m} en réalité.
+
+L'étang est approximativement un carré.
+Sur le schéma un côté mesure environ \unit{7{,}2}{cm} donc en faisant un produit en croix, on trouve qu'un côté de l'étang mesure en réalité :
+\[
+\frac{7{,}2 \times 20}{1{,}4} \approx \unit{100}{m}.
+\]
+La surface $S$ de l'étang est donc :
+\[
+S_\mathrm{étang} = \mathrm{côté}\times\mathrm{côté} = 100\times 100 = \unit{10\,000}{m\squared}.
+\]
+
+Finalement, en divisant ce résultat par quatre, on trouve que la surface de la tache d'huile $S$ est d'environ \unit{2\,500}{m\squared} :
+\[
+S \approx \unit{2\,500}{m\squared}.
+\]
+
+\subsubsection{Épaisseur de la tache d'huile}
+
+Le volume d'un cylindre est donné par :
+\[
+V = S\times e,
+\]
+donc
+\[
+e = \frac{V}{S}.
+\]
+
+Il faut convertir les millilitres en mètres cubes : $V_\mathrm{cac} =  \unit{4{,}5}{mL} = \unit{4{,}5\times10^{-6}}{m\cubed}$.
+L'épaisseur de la tache d'huile est donc :
+\[
+e = \frac{V_\mathrm{cac}}{S} = \frac{4{,}5\times10^{-6}}{2\,500} = \unit{1{,}8\times10^{-9}}{m} = \unit{1{,}8}{nm}.
+\]
+L'épaisseur de la tache d'huile est d'environ \unit{1{,}8}{nm}.
+
+\section{Conclusion}
+
+On remarque que le résultat est proche de notre hypothèse (au moins en ordre de grandeur).
+Si l'on suppose que les molécules sont disposées les unes à côté des autres à la surface de l'eau, l'épaisseur de la tache d'huile correspond à la taille d'une molécule d'huile.
+Avec les valeurs obtenues plus haut, on trouve qu'une molécule d'huile mesure environ \unit{1{,}8}{nm}.
+
+\end{document}

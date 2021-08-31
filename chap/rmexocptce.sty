@@ -1,0 +1,87 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rmexocptce}[2020/11/01]
+
+% ce paquet gère : 
+% - les points par compétences pour chaque question par la commande \aj"code-cptce"{nbe_de_points}
+% - l'affichage du nb de pts de chaque question par la commande ci-dessus
+% - le nb de pts pour chaque exo affiché en bas de l'exo si on utilise l'environnement "exo"
+% - la grille de cptces qui récapitule le nb de pts total pour chaque cptce dans le ds, par la commande \makecptces
+%
+% environnement exo gérant le nb de pts total, le nb de pts de l'exo et la mise en page et la numérotation avec référencement possible : 
+				% \begin{exo}{titre de l'exo}
+				% \end{exo}
+%
+% commandes pour ajouter des points sur chaque question au total et pour chaque exo
+                %\ajapp{3} : ajoute 3 points à la compétence app
+%
+% commande pour la grille tracée et le nombre de points donnés pour chaque compétence
+                %\makecptces
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{numeroexo}						% compteur pour la numérotation des exercices
+\setcounter{numeroexo}{0}
+
+\RequirePackage{fp}								% for floating point numbers calculations
+\ProcessOptions
+
+%%%%% création des variables utiles
+\FPset\ptsexo{0}										% "compteur" de point par exo
+\FPset\apptot{0}										% "compteur" de point par compétence app
+\FPset\anaraitot{0}									% "compteur" de point par compétence anarai
+\FPset\reatot{0}											% "compteur" de point par compétence rea
+\FPset\valtot{0}											% "compteur" de point par compétence val
+\FPset\comtot{0}										% "compteur" de point par compétence com
+\FPset\rcotot{0}											% "compteur" de point par compétence rco
+\FPset\x{0}													% variable pour faire des calculs
+
+%%%%% 	les fonctions pour écrire le barême et le calculer
+%					l'argument est le nombre de point pour la compétence
+%					ajoute le nb de pts au compteur de la compétence pour le bilan
+%					affiche le nb de pts avec la couleur qui va bien	
+\newcommand\ajapp[1]{\FPeval{apptot}{apptot+#1}\global\let\apptot\apptot\FPeval{ptsexo}{ptsexo+#1}\global\let\ptsexo\ptsexo{\small\color{bleu_f}{#1 pts}}}
+\newcommand\ajanarai[1]{\FPeval{anaraitot}{anaraitot+#1}\global\let\anaraitot\anaraitot\FPeval{ptsexo}{ptsexo+#1}\global\let\ptsexo\ptsexo{\small\color{green_f}{#1 pts}}}
+\newcommand\ajrea[1]{\FPeval{reatot}{reatot+#1}\global\let\reatot\reatot\FPeval{ptsexo}{ptsexo+#1}\global\let\ptsexo\ptsexo{\small\color{yellow_f}{#1 pts}}}
+\newcommand\ajval[1]{\FPeval{valtot}{valtot+#1}\global\let\valtot\valtot\FPeval{ptsexo}{ptsexo+#1}\global\let\ptsexo\ptsexo{\small\color{orange_f}{#1 pts}}}
+\newcommand\ajcom[1]{\FPeval{comtot}{comtot+#1}\global\let\comtot\comtot\FPeval{ptsexo}{ptsexo+#1}\global\let\ptsexo\ptsexo{\small\color{red_f}{#1 pts}}}
+\newcommand\ajrco[1]{\FPeval{rcotot}{rcotot+#1}\global\let\rcotot\rcotot\FPeval{ptsexo}{ptsexo+#1}\global\let\ptsexo\ptsexo{\small\color{gray_f}{#1 pts}}}
+
+%%%%% l'environnement proprement dit
+\newenvironment{exo}[1]{																% un argument : nom de l'exo
+\refstepcounter{numeroexo}															% +1 to n° exo value 
+\section*{Exercice \thenumeroexo\ -- #1}										% titre
+\FPset\ptsexo{0}																				% réinitialise la valeur du compteur de pts d'exo
+}%
+{%
+\FPeval{ptsexo}{round(ptsexo:2)}													% arondi le nb de pts de l'exo à 2 chiffres après la virgule
+Nombre total de point pour l'exercice : \ptsexo{} points				%	affiche le nb de pts total de l'exo
+}
+
+%%%%%%%%%% Bilan des pts par cptces
+\newcommand{\makecptces}{
+	\FPeval{rcotot}{round(rcotot:2)}
+	\FPeval{apptot}{round(apptot:2)}
+	\FPeval{anaraitot}{round(anaraitot:2)}
+	\FPeval{reatot}{round(reatot:2)}
+	\FPeval{valtot}{round(valtot:2)}
+	\FPeval{comtot}{round(comtot:2)}
+	
+	\begin{table}[h]
+	\newcommand{\formerarraystretch}{\arraystretch}					% stores the \arraystretch value of the document
+	\renewcommand\arraystretch{1.5}											% changes it for the cptces pts table
+	\center
+	\begin{tabular}{|>{\centering}p{0.15\textwidth} | p{0.11\textwidth}<{\centering} | p{0.11\textwidth}<{\centering} | p{0.11\textwidth}<{\centering} | p{0.1\textwidth}<{\centering} | p{0.11\textwidth}<{\centering} | p{0.11\textwidth}<{\centering} |}
+	\hline
+	\textbf{Compétence}  & \app & \anarai & \rea & \val & \com & \rco  \\
+	\hline
+	\textbf{Points}				& & & & & & \\
+	\textbf{obtenus}				& & & & & & \\
+	\hline
+	\textbf{Total}					& \apptot & \anaraitot & \reatot & \valtot & \comtot & \rcotot \\
+	\hline
+	\end{tabular}
+	\renewcommand\arraystretch{\formerarraystretch}				% back to document \arrastretch value
+	\end{table}
+	}
+	
+\endinput

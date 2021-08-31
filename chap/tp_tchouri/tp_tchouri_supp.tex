@@ -1,0 +1,40 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\thispagestyle{empty}
+\newgeometry{top=2cm,bottom=2cm, left=2cm, right=2cm}
+
+\foreach \n in {1,...,3} {
+\hrule
+
+\section*{Période de révolution}
+
+Pour un objet du système solaire (une planète, une comète, etc.), la \textbf{période de révolution}, correspond à la durée nécessaire à cet objet pour faire un tour complet \textbf{autour du Soleil.}
+
+\begin{enumerate}
+\setcounter{enumi}{11}
+\item \rco{}
+
+Quelle est la période de révolution de la Terre ?
+
+\item \app{} \anarai{}
+
+À l'aide des fichiers à votre disposition, déterminer la période de révolution de la comète Tchouri, puis celle de Jupiter.
+Justifier en expliquant succinctement votre démarche.
+\end{enumerate}
+
+\setcounter{counterappelenv}{2}
+\begin{appel}
+\val{}
+\end{appel}
+}
+\hrule
+
+\end{document}

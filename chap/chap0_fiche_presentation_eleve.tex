@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+\author{}
+\date{}
+\title{Fiche de présentation}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{xcolor}
+\definecolor{gray_f}{RGB}{68,84,106}
+\definecolor{gray_c}{RGB}{214,220,229}
+\definecolor{bleu_f}{RGB}{91,155,213}
+\definecolor{bleu_c}{RGB}{222,235,247}
+\definecolor{red_f}{RGB}{204,0,0}
+\definecolor{red_c}{RGB}{245,204,204}
+\definecolor{orange_f}{RGB}{237,125,49}
+\definecolor{orange_c}{RGB}{251,229,214}
+\definecolor{green_f}{RGB}{112,173,71}
+\definecolor{green_c}{RGB}{226,240,217}
+\definecolor{yellow_f}{RGB}{255,192,0}
+\definecolor{yellow_c}{RGB}{255,242,204}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\textcolor{gray_f}{Physique-Chimie\\R. METZDORFF}}
+\chead{\textcolor{gray_f}{Lycée Suzanne Valadon}}
+\rhead{\textcolor{gray_f}{2020-2021}}
+\renewcommand{\headrulewidth}{0.4pt}
+\let\HeadRule\headrule
+\renewcommand\headrule{\color{gray_f}\HeadRule}
+\cfoot{}
+
+%%%%% New environnements
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{chngcntr}
+
+%%% header
+\mdfdefinestyle{s_head}{%
+	linecolor=gray_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=false,
+	backgroundcolor=gray_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=gray_f
+}
+\newmdenv[style=s_head]{header_env}
+\newenvironment{header}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{header_env}}
+	{\end{header_env}}
+
+\begin{document}
+
+\begin{header}
+\begin{center}
+\LARGE
+\textbf{Fiche de présentation}
+\end{center}
+\end{header}
+
+\subsection*{Classe :}
+
+\subsection*{Nom, prénom :}
+
+\subsection*{Dans quelle classe étiez-vous l'année dernière ?}
+\vspace{15pt}
+
+\subsection*{Des idées d'orientation pour l'année prochaine ? Et pour après ?}
+\vfill
+
+\subsection*{Disposez-vous d'un smartphone ?}
+\subsubsection*{Si oui, avez-vous un forfait avec data ?}
+
+\subsection*{Chez vous, disposez-vous d'un ordinateur ?}
+\subsubsection*{Si oui, est-il partagé par plusieurs personnes ?}
+\subsubsection*{Et dispose-t-il d'une connexion internet ?}
+
+\vspace{15pt}
+
+\subsection*{Divers : problèmes de santé, asthme, allergie, etc. ?}
+\vfill
+
+\subsection*{A propos du confinement :}
+\begin{itemize}
+\item[•] Que diriez-vous du temps consacré à la physique-chimie pendant le confinement par rapport au reste de l'année ?
+
+\hspace{50pt} $\square$ Supérieur \hspace{50pt} $\square$ Égal \hspace{50pt} $\square$ Inférieur
+\item[•] Comment échangiez-vous avec  votre établissement ?
+
+\hspace{50pt} $\square$ Email \hspace{50pt} $\square$ Courier postal \hspace{50pt} $\square$ Téléphone
+
+\hspace{50pt} $\square$ Autre (précisez) :
+\item[•] Êtes-vous retourné dans votre établissement à la fin du confinement ?
+
+\hspace{50pt} $\square$ Oui \hspace{50pt} $\square$ Non
+\item[•] Avez vous des remarques concernant cette période ?
+\end{itemize}
+\vfill
+
+
+\end{document}

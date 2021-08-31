@@ -1,0 +1,53 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rmpackages}[2020/11/08]
+
+% This package takes care of all packages I use every single time in my school documents
+
+%%%%%%%%%% usual packages
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[french]{babel}
+\RequirePackage{tikz}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{amsmath}																				% les maths
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{fourier}																					% symboles intégral propre
+\RequirePackage{graphicx}
+\RequirePackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}	% les marges
+\RequirePackage{multicol}																					% pour écrire sur plusieurs colones
+\RequirePackage[thinspace,thinqspace,amssymb]{SIunits}							% écriture des nombres et unités
+\RequirePackage{setspace}																				% set space between lines
+\RequirePackage{enumitem}																				% resume command in enumerate
+\RequirePackage{array}																						% stretch array lines
+%\usepackage{url}																							%
+\RequirePackage[breaklinks]{hyperref}															% clickable links
+\RequirePackage[hyphenbreaks]{breakurl}														% for long urls
+\RequirePackage{chemfig}																					% pour les formules chimiques
+%\RequirePackage{pythontex}																			% Python code in tex
+% compiler avec :
+% "pdflatex" -synctex=1 -interaction=nonstopmode -shell-escape %.tex|/Users/remimetzdorff/opt/anaconda3/bin/python /usr/local/texlive/2020/bin/x86_64-darwin/pythontex %.tex|"pdflatex" -synctex=1 -interaction=nonstopmode -shell-escape %.tex|open %.pdf
+	% afficher le code avec les couleurs				
+				%\begin{pyverbatim}
+				%#python code
+				%\end{pyverbatim}
+	% afficher le résultat du code
+				%\begin{pycode}
+				%#python code
+				%\end{pycode}
+	% afficher en mode console python
+				%\begin{pyconsole}
+				% instructions
+				%\end{pyconsole}
+
+\ProcessOptions
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red_f,
+    citecolor=bleu_f,
+    filecolor=green_f,
+    urlcolor=bleu_f
+}
+
+\endinput

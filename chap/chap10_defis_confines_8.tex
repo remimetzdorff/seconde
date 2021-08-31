@@ -1,0 +1,85 @@
+\documentclass[12pt,a4paper,fleqn]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\newcommand{\width}{16}
+\newcommand{\height}{5}
+\newcommand{\step}{.5}
+
+\begin{document}
+
+\begin{header}
+Les défis confinés -- Épisode 8
+\end{header}
+
+\section*{Un peu de vocabulaire}
+
+Regarder la vidéo \href{https://youtu.be/QFLGIwaZe2s}{https://youtu.be/QFLGIwaZe2s}.
+\begin{enumerate}
+\item Donner quelques exemples d'objets ou d'instruments qui comportent une ou plusieurs lentilles (au moins deux exemples en plus de ceux indiqués dans la vidéo).
+\item Comment qualifie-t-on une image quand elle est visible sur un écran ?
+\item Comment s'appellent les points $O$, $F$ et $F'$ du schéma ci-dessous ?
+\item Comment appelle-t-on la flèche $AB$ ?
+Et la flèche $A'B'$ ?
+\item Comment appelle-t-on la grandeur qui caractérise une lentille ?
+Quelle est son unité ?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+\pgfmathsetmacro\x{(\width)/2}
+\pgfmathsetmacro\y{(\height)/2}
+\coordinate (O) at (\x,\y);
+\draw [->, >=stealth, thick] (0, \y) --++ (\width, 0);
+
+\draw [<->, >=angle 60, ultra thick] (\x, \y-3) -- (\x, \y+3);
+\draw (O) node [below left] {$O$};
+\draw (O) ++ (-3, 0) node [below left] {$F$};
+\draw (O) ++ (-3, 0) node {$|$};
+\draw (O) ++ (3, 0) node [below left] {$F'$};
+\draw (O) ++ (3, 0) node {$|$};
+
+\draw [->, >=stealth, ultra thick, red] (O) ++ (-6, 0) node [below left] {$A$} --++ (0, 2) node [below left] {$B$};
+\draw [->, >=stealth, ultra thick, red] (O) ++ (6, 0) node [below right] {$A'$} --++ (0, -2) node [below right] {$B'$};
+\end{tikzpicture}
+\end{center}
+
+
+\section*{Construction d'une image}
+
+Regarder la vidéo \href{https://youtu.be/GAX\_ZorF1hE}{https://youtu.be/GAX\_ZorF1hE}.
+Vous pouvez aussi consulter cette animation : \href{http://shorturl.at/klJM6}{http://shorturl.at/klJM6}.
+\begin{enumerate}[resume]
+\item Reproduire le schéma ci-dessous et construire l'image $A'B'$ de l'objet $AB$.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+\foreach \y in {0,\step,...,\height} {
+    \draw [gray_c] (0,\y) --++ (\width,0);
+}
+\foreach \x in {0,\step,...,\width} {
+    \draw [gray_c] (\x,0) --++ (0, \height);
+}
+
+\pgfmathsetmacro\x{(\width)/2-2}
+\pgfmathsetmacro\y{(\height)/2}
+\coordinate (O) at (\x,\y);
+\draw [->, >=stealth, thick] (0, \y) --++ (\width, 0);
+
+\draw [<->, >=angle 60, ultra thick] (\x, \y-2) -- (\x, \y+2);
+\draw (O) node [below left] {$O$};
+\draw (O) ++ (-3, 0) node [below left] {$F$};
+\draw (O) ++ (-3, 0) node {$|$};
+\draw (O) ++ (3, 0) node [below left] {$F'$};
+\draw (O) ++ (3, 0) node {$|$};
+
+\draw [->, >=stealth, ultra thick, red] (O) ++ (-4.5, 0) node [below left] {$A$} --++ (0, 1) node [below left] {$B$};
+\end{tikzpicture}
+\end{center}
+
+\end{document}

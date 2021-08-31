@@ -1,0 +1,110 @@
+\include{template_ds}
+%\cfoot{} %% if no page number is needed
+
+\begin{document}
+
+\begin{header}
+Devoir à la maison 1
+\normalsize
+\flushleft
+%\begin{doublespace}
+%Classe :
+%
+%NOM :
+%
+%\end{doublespace}
+%Prénom :
+\end{header}
+%L'énoncé est à rendre avec la copie : indiquez vos nom et prénom sur l'énoncé.
+
+%\noindent
+%La propreté de la copie (tenue, mise en valeur des résultats, orthographe) sera valorisée dans la notation.
+
+\noindent
+
+\section{Verrerie de précision}
+
+\begin{enumerate}
+\item Rappeler la formule de la masse volumique $\rho$ d'un corps en fonction de sa masse $m$ et de son volume $V$.
+Donner les unités de chaque grandeur.
+\item Quelle est la valeur de la masse volumique de l'eau ?
+\item Calculer la masse de \unit{10}{\milli\liter} d'eau et l'exprimer en gramme.
+La formule littérale ($m=...$ en fonction de $\rho$ et $V$) est attendue, ainsi que le détail des conversions.
+\label{quest:masse_10mL_eau}
+\end{enumerate}
+
+On souhaite comparer la précision de différentes verreries.
+En utilisant un bécher, une éprouvette graduée et une pipette jaugée :
+\begin{itemize}
+\item[•] on prélève \unit{10}{\milli\liter} d'eau distillée ;
+\item[•] on pèse le volume prélevé à l'aide d'une balance tarée.
+\end{itemize}
+On réalise de nombreuses fois cette manipulation pour obtenir un grand nombre de mesures.
+Une partie des résultats des mesures de masse (en gramme) est indiquée dans le tableau ci-dessous.
+\begin{center}
+\begin{tabular}{l|c|c|c|c|c}
+Bécher & 10{,}23 & 9{,}13 & 9{,}62 & 11{,}00 & 8{,}98 \\
+\hline
+Éprouvette graduée & 10{,}06 & 9{,}97 & 10{,}07 & 10{,}10 & 10{,}00 \\
+\hline
+Pipette jaugée & 10{,}00 & 9{,}99 & 9{,}99 & 10{,}01 & 10{,}00 \\
+\end{tabular}
+\end{center}
+\begin{enumerate}[resume]
+\item Les résultats des mesures sont-ils en accord avec le résultat de la question~\ref{quest:masse_10mL_eau} ?
+Justifier.
+\item En exploitant les résultats donnés dans le tableau, identifier la verrerie la plus précise puis la moins précise.
+Justifier.
+\item Ces résultats sont-ils en accord avec le tableau de la section \og Quelle verrerie choisir \fg{}  du TP Dissolution -- Sauvez Maurice ?
+Justifier.
+\end{enumerate}
+
+Compte tenu du grand nombre de mesures réalisées, on préfère représenter les résultats sous la forme d'histogrammes (attention : les axes des abscisses ne sont pas gradués de la même façon) :
+\begin{figure}[h]
+\center
+\includegraphics[scale=1]{../images/precision_verrerie.png}
+\end{figure}
+\begin{enumerate}[resume]
+\item \emph{Question facultative:} En traçant l'allure de chaque histogramme comme une courbe en forme de cloche, représenter à main levée sur un même schéma les trois histogrammes A, B et C.
+\item À quelle verrerie correspondent les données de l'histogramme \og Verrerie C \fg{} ?
+Celles de l'histogramme \og Verrerie B \fg{} ?
+Celles de l'histogramme \og Verrerie A \fg{} ?
+Justifier.
+\end{enumerate}
+
+\section{Encore un peu d'eau salée}
+
+On souhaite réaliser \unit{50}{mL} d'eau salée à la concentration massique $C_\mathrm{m} = \unit{150}{g/L}$.
+On dispose de sel, d'eau et de tout le matériel nécessaire.
+\begin{enumerate}[resume]
+\item Déterminer la masse de sel à peser.
+La formule littérale est attendue, ainsi que le détail des conversions.
+\item Donner la liste du matériel nécessaire pour la manipulation.
+\item Donner les différentes étapes de manipulation sous la forme de schémas.
+\item Comment s'appelle la manipulation réalisée pour préparer cette solution.
+\end{enumerate}
+
+Après avoir préparé la solution, on la pèse (sans la verrerie utilisée pour la préparer) : les \unit{50}{mL} de solution ont une masse $m=\unit{54{,}9}{g}$.
+\begin{enumerate}[resume]
+\item Calculer la masse volumique $\rho$ de la solution, exprimée en kilogramme par litre.
+La formule littérale est attendue, ainsi que le détail des conversions.
+\item Quelle serait la valeur de la masse volumique $\rho$ si la concentration massique de la solution était $C_\mathrm{m} = \unit{0}{g/L}$ ?
+Expliquer pourquoi.
+\item Les valeurs de masse volumique pour des solutions de concentration massique $C_\mathrm{m} = \unit{0}{g/L}$ et $C_\mathrm{m} = \unit{150}{g/L}$ des questions précédentes sont-elles en accord avec la courbe ci-dessous.
+Justifier.
+\item En moyenne, l'eau de la mer Morte a une masse volumique $\rho = \unit{1{,175}}{kg/L}$.
+En vous aidant de la courbe, en déduire sa concentration massique en sel.
+Quelle est alors la masse de sel dans 1 Litre de mer Morte ?
+\item Proposer une autre méthode permettant de déterminer la masse de sel présente dans \unit{1}{L} de mer Morte.
+\end{enumerate}
+\begin{figure}[h]
+\center
+\includegraphics[scale=1]{../images/densite_saumure.png}
+\end{figure}
+
+\begin{enumerate}[resume]
+\item Cette courbe ne peut être tracée que jusqu'à une valeur de concentration massique de \unit{358{,}5}{g/L}.
+À votre avis, pourquoi est-il impossible d'aller plus loin ?
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,179 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+TP
+
+Quel médicament choisir ?
+\end{header}
+
+Après une journée de huit heures de cours, vous en avez plein la tête et un mal de crâne s'installe.
+Une tisane ?
+Non.
+Pour mettre fin au calvaire, vous choisissez le comprimé de Doliprane\textsuperscript{\textregistered}
+1000 mg.
+Mais...
+Malheur !
+L'armoire à pharmacie est vide et il est trop tard pour vous rendre en pharmacie...
+
+En désespoir de cause vous vous tournez vers trois connaissances,  Alice, Bob et Charlie, commerciaux dans l'industrie pharmaceutique
+Ravis d'avoir un potentiel client, ils accourent et vous proposent chacun un échantillon de leur médicament.
+Une querelle commence où chacun accuse les autres de vouloir vous vendre un médicament inefficace ou pire, dangereux.
+
+Contre les maux de tête, seul un de leurs médicaments est en réalité vraiment efficace.
+Un autre est issu d'une méthode de synthèse douteuse et peut nuire gravement à votre santé et le dernier est une contrefaçon qui soulagera simplement vos aigreurs d'estomac.
+
+\section*{Objectif}
+\begin{objectif}
+Identifier chacun des trois \og médicaments \fg{}
+\end{objectif}
+
+\section*{Contraintes}
+
+Vous devrez mettre en œuvre deux méthodes d'identification basées sur des principes différents.
+
+Chaque élève rédige un compte-rendu qui fera partie du cours.
+À la fin du TP, le professeur tire au sort un compte-rendu par groupe qui sera noté.
+
+\section*{Aides}
+
+Vous pouvez demander de l'aide au professeur qui pourra vous donner des indications...
+
+Les trois \og médicaments \fg{} sont présents au bureau dans les coupelles A, B et C (pour Alice, Bob et Charlie).
+Vous pouvez bien sûr en prendre des échantillons afin de réaliser les tests nécessaires.
+
+Pour remplir l'objectif et rédiger un bon compte-rendu, vous devez respecter les principales étapes de la \textbf{démarche scientifique} :
+\begin{enumerate}
+\item \textbf{Hypothèse}.
+Donnez votre hypothèse et justifiez-la : \og Je pense que ... car ... \fg{}.
+\item \textbf{Protocole}.
+Mettre en place un protocole pour valider (ou invalider !) votre hypothèse :
+\begin{itemize}
+\item[•] écrire en quelques lignes ce que vous prévoyez de faire ;
+\item[•] établir une liste du matériel ;
+\item[•] si besoin, faire un schéma de l'expérience ;
+\item[•] réaliser l'expérience : décrire les étapes de la manipulation ;
+\item[•] relever les mesures utiles : définir des notations, indiquer les unités ;
+\item[•] indiquer les observations utiles : schéma et description (\og J'observe que ... \fg{}).
+\end{itemize}
+\item \textbf{Conclusion}. Pour terminer le compte-rendu :
+\begin{itemize}
+\item[•] donner les conclusions en reprenant ce qui a été trouvé dans le protocole ;
+\item[•] dire si les conclusions sont en accord avec votre hypothèse ;
+\item[•] répondre à la problématique !
+\end{itemize}
+\end{enumerate}
+
+\begin{doc}
+\textbf{1 : Synthèse du paracétamol}
+
+Le paracétamol fut synthétisé pour la première fois en 1878 par Harmon Northrop Morse.
+Plus tard, Friedlander modifia la synthèse ce qui permit d'améliorer sensiblement son rendement.
+Le paracétamol est obtenu en faisant réagir deux espèces chimiques dont le 4-aminophénol.
+Un sous-produit de la synthèse est l'acide acétique qui donne aussi sont acidité au vinaigre.
+Après synthèse, le paracétamol est purifié pour éviter la présence de résidus d'autres espèces.
+\end{doc}
+
+\begin{multicols}{2}
+
+\begin{doc}
+\textbf{2 : Doliprane\textsuperscript{\textregistered} 1000 mg}
+
+Ce médicament est un antalgique et un antipyrétique qui contient du paracétamol.
+Il est utilisé pour faire baisser la fièvre et dans le traitement des affections douloureuses.
+
+Comme tout médicament, son utilisation peut entrainer des effets indésirables.
+
+\flushright
+\textit{Source : \href{https://eurekasante.vidal.fr/medicaments/vidal-famille/medicament-ddolip01-DOLIPRANE.html}{eurekasante.vidal.fr}}
+\end{doc}
+
+\begin{doc}
+\textbf{3 : Bicarbonate de soude}
+
+Il facilite la digestion ou procure un soulagement aux maux d'estomac dus aux acidités gastriques en tant qu'antiacide.
+Il est efficace contre les reflux gastriques dus au stress ou à un excès alimentaire.
+
+Avec un acide faible, il forme un mélange effervescent.
+\end{doc}
+
+\end{multicols}
+
+\begin{doc}
+\textbf{4 : Propriétés physico-chimiques de quelques espèces}
+\center
+\begin{tabular}{l|c|c|c|c}
+Nom & Formule brute & $T_\mathrm{fus}$ ($\degree \mathrm{C}$) & $\rho$ ($\mathrm{g/cm^3}$) & Aspect à \unit{20}{\celsius}  \\
+\hline \hline
+Paracétamol & $\mathrm{C_8H_9NO_2}$ & 170 & 1{,}293 & solide blanc \\
+4-aminophénol & $\mathrm{C_6H_7NO}$ & ??? & 1{,}293 & solide blanc \\
+Bicarbonate de soude & $\mathrm{NaHCO_3}$ & ??? & ??? & solide blanc \\
+\end{tabular}
+\end{doc}
+
+\begin{doc}
+\textbf{5 : Mesurer une température de fusion avec le banc Kofler}
+
+Le banc Kofler est une plaque chauffante sur laquelle s'établit une élévation régulière de température.
+La mesure de la  température de fusion d'un solide avec le banc Kofler est rapide et simple à mettre en œuvre.
+Cette mesure est un critère de pureté très répandu au laboratoire.
+En effet, un produit pur présente un point de fusion bien net : la transition solide-liquide a lieu sur un intervalle de moins de un degré.
+En revanche, un produit impur présente une transition moins nette, à une température toujours différente de la température de fusion du produit pur.
+
+\flushright
+\textit{Source : \href{http://culturesciences.chimie.ens.fr/content/utilisation-du-banc-kofler-pour-mesurer-une-temperature-fusion-918}{culturesciences.chimie.ens.fr}}
+\end{doc}
+
+\begin{multicols}{2}
+
+\begin{doc}
+\textbf{6 : 4-aminophénol}
+
+\begin{center}
+\includegraphics[scale=0.05]{images/pict_aquatique.jpg}
+\includegraphics[scale=0.05]{images/pict_nocif.jpg}
+\includegraphics[scale=0.05]{images/pict_cancer.jpg}
+\end{center}
+
+\footnotesize
+\noindent
+H341 : Susceptible d'induire des anomalies génétiques.
+
+\noindent
+H302+H332 : Nocif en cas d’ingestion ou d’inhalation.
+
+\noindent
+H410 : Très toxique pour les organismes aquatiques.
+\end{doc}
+
+\begin{doc}
+\textbf{7 : Paracétamol}
+
+\begin{center}
+\includegraphics[scale=0.05]{images/pict_nocif.jpg}
+\end{center}
+
+\footnotesize
+\noindent
+H302 : Nocif en cas d'ingestion.
+
+\noindent
+H315 : Provoque une irritation cutanée.
+
+\noindent
+H317 : Peut provoquer une allergie cutanée.
+
+\noindent
+H319 : Provoque une sévère irritation des yeux.
+\end{doc}
+
+\end{multicols}
+
+\end{document}

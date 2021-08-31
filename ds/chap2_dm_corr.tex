@@ -1,0 +1,143 @@
+\include{template_ds}
+%\cfoot{} %% if no page number is needed
+\usepackage{setspace}
+\usepackage{enumitem}
+
+\begin{document}
+
+\begin{header}
+Devoir à la maison 1 -- Correction
+\normalsize
+\flushleft
+%\begin{doublespace}
+%Classe :
+%
+%NOM :
+%
+%\end{doublespace}
+%Prénom :
+\end{header}
+%L'énoncé est à rendre avec la copie : indiquez vos nom et prénom sur l'énoncé.
+
+%\noindent
+%La propreté de la copie (tenue, mise en valeur des résultats, orthographe) sera valorisée dans la notation.
+
+\noindent
+
+\section{Verrerie de précision}
+
+\begin{enumerate}
+\item La formule de la masse volumique est
+\begin{equation}
+\rho = \frac{m}{V}
+\nonumber
+\end{equation}
+Si $m$ est exprimé en kg et $V$ en L, alors $\rho$ est en kg/L.
+
+\item La masse volumique de l'eau est $\rho_\mathrm{eau} = \unit{1{,}0}{\kilo\gram\per\liter}$.
+\label{quest:masse_volumique_eau}
+
+\item Il faut commencer par faire une conversion pour exprimer le volume en L :
+\begin{equation}
+V = \unit{10}{mL}=\unit{0{,}010}{L}.
+\nonumber
+\end{equation}
+On fait ensuite un \og produit en croix\fg{} pour exprimer la masse en fonction de la masse volumique et du volume, puis on remplace par les valeurs numériques :
+\begin{equation}
+m = \rho \times V = 1{,}0 \times 0{,}010 = \unit{0{,}010}{kg}.
+\nonumber
+\end{equation}
+On termine par une conversion pour exprimer le résultat en grammes :
+\begin{equation}
+m = \unit{0{,}010}{kg} = \unit{10}{g}.
+\nonumber
+\end{equation}
+La masse de \unit{10}{\milli\liter} d'eau est \unit{10}{g}.
+\label{quest:masse_10mL_eau}
+
+\item Ces résultats sont en accord avec le résultat de la question~\ref{quest:masse_10mL_eau} car les valeurs obtenues sont proches de \unit{10}{g}.
+La moyenne des valeurs mesurées avec chaque cas est bien d'environ \unit{10}{g}.
+
+\emph{Certains d'entre vous ont été jusqu'à faire un calcul d'écart relatif, c'est très bien !}
+
+\item La verrerie la plus précise est la pipette jaugée car les valeurs mesurées sont les plus proches proches de \unit{10}{g} et sont peu dispersées.
+
+À l'inverse, le bécher est le moins précis puisque les valeurs mesurées sont parfois assez éloignées de \unit{10}{g}, elles sont très dispersées.
+
+\item Oui car on avait noté lors du TP que la verrerie avec l'incertitude relative la plus faible (la plus précise donc) était bien la pipette jaugée.
+
+À l'inverse le bécher avait l'incertitude relative la plus grande ce qui en fait donc bien une verrerie peu précise.
+
+\item Voir correction en classe.
+
+\item En regardant l'axe des abscisses, on voit qu'avec la verrerie B, on obtient les valeurs les plus dispersées : c'est donc le bécher.
+
+Avec la verrerie C, les valeurs sont les moins dispersées : c'est la pipette jaugée.
+
+Par élimination, la verrerie A est donc l'éprouvette graduée.
+\end{enumerate}
+
+\section{Encore un peu d'eau salée}
+
+\begin{enumerate}[resume]
+\item La formule de la concentration massique est :
+\begin{equation}
+C_\mathrm{m} = \frac{m_\mathrm{soluté}}{V_\mathrm{solution}}.
+\nonumber
+\end{equation}
+Pour déterminer la masse de sel à peser, on fait donc un \og produit en croix \fg{} pour trouver l'expression de $m_\mathrm{soluté}$.
+En utilisant par exemple la méthode du triangle, on trouve :
+\begin{equation}
+m_\mathrm{soluté} = C_\mathrm{m} \times V_\mathrm{solution}.
+\nonumber
+\end{equation}
+Avant de remplacer par les valeurs numériques, il faut convertir le volume de solution à préparer en L :
+\begin{equation}
+V_\mathrm{solution} = \unit{50}{mL} = \unit{0{,}050}{L}.
+\nonumber
+\end{equation}
+Finalement, on peut faire l'application numérique :
+\begin{equation}
+m_\mathrm{soluté} = 150 \times 0{,}050 = \unit{7{,}5}{g}.
+\nonumber
+\end{equation}
+Il faut peser \unit{7{,}5}{g} de sel pour préparer cette solution.
+
+\item Voir fiche technique dissolution.
+
+\item Voir fiche technique dissolution.
+
+\item C'est une dissolution.
+
+\item On exprime la masse en kg et le volume en L pour obtenir la masse volumique en kg/L :
+\begin{equation}
+V = \unit{50}{mL} = \unit{0{,}050}{L} \quad ; \quad m = \unit{54{,}9}{g} = \unit{0{,}0549}{kg}.
+\nonumber
+\end{equation}
+On peut ensuite utiliser la formule de la masse volumique rappelée à la question 1 :
+\begin{equation}
+\rho = \frac{m}{V} = \frac{0{,}0549}{0{,}050} = \unit{1{,}098}{kg/L}.
+\nonumber
+\end{equation}
+La masse volumique de la solution est \unit{1{,}098}{kg/L}.
+
+\item Si la concentration massique de la solution était $C_\mathrm{m} = \unit{0}{g/L}$, la solution est en fait de l'eau pure.
+Sa masse volumique est donc $\rho = \unit{1}{kg/L}$ comme on l'a dit à la question~\ref{quest:masse_volumique_eau}.
+
+\item Par une construction graphique adaptée (voir correction en classe), on voit que les valeurs trouvées précédemment sont bien en accord avec les valeurs lues sur la courbe :
+\begin{itemize}
+\item[•] Pour $C_\mathrm{m} = \unit{0}{g/L}$ on lit en effet $\rho = \unit{1}{kg/L}$ ;
+\item[•] Pour $C_\mathrm{m} = \unit{150}{g/L}$ on lit $\rho \approx \unit{1{,}1}{kg/L}$, ce qui est proche de la valeur trouvée précédemment.
+\end{itemize} 
+
+\item On voit sur la courbe qu'une solution d'eau salée de masse volumique \unit{1{,}175}{kg/L} a une concentration massique en sel de \unit{275}{g/L}.
+
+La masse de sel dans 1 litre de mer Morte est donc \unit{275}{g}.
+
+\item On pourrait par exemple faire bouillir \unit{1}{L} de mer Morte jusqu'à évaporation complète de l'eau et peser le sel qui reste dans le récipient.
+
+\item Il n'est pas possible de dissoudre indéfiniment du sel dans une quantité d'eau fixée.
+La concentration massique de \unit{358{,}5}{g/L} est la concentration maximale de sel qu'il est possible d'obtenir en solution aqueuse.
+\end{enumerate}
+
+\end{document}

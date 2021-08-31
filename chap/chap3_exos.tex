@@ -1,0 +1,140 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+\usepackage{pythontex}
+
+\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Chapitre 3 -- Exercices
+\end{header}
+
+\section*{Applications sur les puissances de 10}
+
+\begin{enumerate}
+\item Pour les trois applications suivantes, écrire la phrase \og Je décale la virgule ... \fg{} puis le nombre sans utiliser les puissances de 10.
+
+\textit{Exemple  : $5{,}72\times 10^{-2}$ : Je décale la virgule vers la gauche de deux rang en partant de là où elle est dans $5{,}72$ donc $5{,}72\times 10^{-2}=0{,}0572$}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item[•]
+\begin{pycode}
+import random as rd
+x = int(rd.random()*1000)/100.
+n = int(rd.random()*4+1)
+print("$" + str(int(x)) + "{,}" + str(int((x-int(x))*100)) + "\\times 10^{" + str(int(n)) + "}$" )
+\end{pycode}
+
+\item[•]
+\begin{pycode}
+import random as rd
+x = int(rd.random()*1000)/10.
+n = -int(rd.random()*4+1)
+print("$" + str(int(x)) + "{,}" + str(int((x-int(x))*100)) + "\\times 10^{" + str(int(n)) + "}$" )
+\end{pycode}
+
+\item[•]
+\begin{pycode}
+import random as rd
+x = int(rd.random()*1000)/1000.
+n = int(rd.random()*4+1)
+if rd.random() < 0.5:
+    n *= -1
+print("$" + str(int(x)) + "{,}" + str(int((x-int(x))*100)) + "\\times 10^{" + str(int(n)) + "}$" )
+\end{pycode}
+\end{enumerate}
+\end{multicols}
+
+\item Pour les applications suivantes, écrire le nombre sans utiliser les puissances de 10.
+\begin{itemize}
+\begin{multicols}{4}
+\item[•]
+\begin{pycode}
+import random as rd
+x = int(rd.random()*1000)/1000.
+n = int(rd.random()*4+1)
+if rd.random() < 0.5:
+    n *= -1
+print("$" + str(int(x)) + "{,}" + str(int((x-int(x))*100)) + "\\times 10^{" + str(int(n)) + "}$" )
+\end{pycode}
+
+\item[•]
+\begin{pycode}
+import random as rd
+x = int(rd.random()*1000)/10.+1
+n = int(rd.random()*4+1)
+if rd.random() < 0.5:
+    n *= -1
+print("$" + str(int(x)) + "\\times 10^{" + str(int(n)) + "}$" )
+\end{pycode}
+
+\item[•]
+\begin{pycode}
+import random as rd
+x = int(rd.random()*1000)/100.
+n = int(rd.random()*4+1)
+print("$" + str(int(x)) + "{,}" + str(int((x-int(x))*100)) + "\\times 10^{" + str(int(n)) + "}$" )
+\end{pycode}
+
+\item[•]
+\begin{pycode}
+import random as rd
+n = int(rd.random()*4+1)
+if rd.random() < 0.5:
+    n *= -1
+print("$ 10^{" + str(int(n)) + "}$" )
+\end{pycode}
+\end{multicols}
+\end{itemize}
+\end{enumerate}
+
+\section*{Le plus petit film du monde}
+
+\begin{center}
+\includegraphics[scale=0.05]{images/atom_boy_ibm.png}
+\end{center}
+
+En scannant le QR code ci-dessus ou en cliquant sur le \href{https://youtu.be/oSCX78-8-q0?t=28}{lien de la vidéo}, regarder le plus petit film du monde \og A boy and his atom \fg{}.
+Comme le suggère le titre, chaque petite \og bille \fg{} dans le film est un atome (en réalité, ce sont des molécules de monoxyde de carbone mais on fera comme s'il s'agissait d'atomes uniques).
+
+Quelle est la taille du (très) petit garçon de la vidéo ?
+
+\section*{Atomes, molécules, cations où anions ?}
+
+Pour chaque espèce chimique ci-dessous, dire si elle est constituée d'atomes, de molécules, de
+cations ou d'anions :
+\begin{multicols}{4}
+\begin{itemize}
+\item[•] Cu
+\item[•] $\dioxydedecarbone$
+\item[•] $\fluorure$
+\item[•] $\acetatedethyle$
+\item[•] $\ionoxonium$
+\item[•] Si
+\item[•] $\ionmagnesiumII$
+\item[•] Au
+\end{itemize}
+\end{multicols}
+
+\section*{Solides ioniques}
+
+À l'aide de la section 3 du chapitre 3, donner la formule chimique des solides ioniques suivants :
+\begin{multicols}{3}
+\begin{itemize}
+\item[•] Hydroxyde de sodium ;
+\item[•] Sulfate de magnésium ;
+\item[•] Iodure de fer II.
+\end{itemize}
+\end{multicols}
+
+
+  
+
+
+
+\end{document}

@@ -1,0 +1,188 @@
+\documentclass[12pt,a4paper,fleqn]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+
+\begin{header}
+Chapitre 10 -- Lentilles convergentes
+\end{header}
+
+\newcommand{\width}{16}
+\newcommand{\height}{5}
+\newcommand{\step}{.5}
+
+\section*{Un cas quelconque}
+
+\begin{center}
+\begin{tikzpicture}
+\foreach \y in {0,\step,...,\height} {
+    \draw [gray_c] (0,\y) --++ (\width,0);
+}
+\foreach \x in {0,\step,...,\width} {
+    \draw [gray_c] (\x,0) --++ (0, \height);
+}
+
+\pgfmathsetmacro\x{(\width)/2-2}
+\pgfmathsetmacro\y{(\height)/2}
+\coordinate (O) at (\x,\y);
+\draw [->, >=stealth, thick] (0, \y) --++ (\width, 0);
+
+\draw [<->, >=angle 60, ultra thick] (\x, \y-2) -- (\x, \y+2);
+\draw (O) node [below left] {$O$};
+\draw (O) ++ (-3, 0) node [below left] {$F$};
+\draw (O) ++ (-3, 0) node {$|$};
+\draw (O) ++ (3, 0) node [below left] {$F'$};
+\draw (O) ++ (3, 0) node {$|$};
+
+\draw [->, >=stealth, ultra thick, red] (O) ++ (-4.5, 0) node [below left] {$A$} --++ (0, 1) node [below left] {$B$};
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+\section*{Un autre}
+
+\begin{center}
+\begin{tikzpicture}
+\renewcommand{\height}{6}
+\foreach \y in {0,\step,...,\height} {
+    \draw [gray_c] (0,\y) --++ (\width,0);
+}
+\foreach \x in {0,\step,...,\width} {
+    \draw [gray_c] (\x,0) --++ (0, \height);
+}
+
+\pgfmathsetmacro\x{(\width)/2+1.5}
+\pgfmathsetmacro\y{(\height)/2}
+\coordinate (O) at (\x,\y);
+\draw [->, >=stealth, thick] (0, \y) --++ (\width, 0);
+
+\draw [<->, >=angle 60, ultra thick] (\x, \y-2.5) -- (\x, \y+2.5);
+\draw (O) node [below right] {$O$};
+\draw (O) ++ (-2.5, 0) node [below right] {$F$};
+\draw (O) ++ (-2.5, 0) node {$|$};
+\draw (O) ++ (2.5, 0) node [below right] {$F'$};
+\draw (O) ++ (2.5, 0) node {$|$};
+
+\draw [->, >=stealth, ultra thick, red] (O) ++ (-7.5, 0) node [below left] {$A$} --++ (0, -2) node [below left] {$B$};
+
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+\section*{Un cas intéressant}
+
+\begin{center}
+\begin{tikzpicture}
+\foreach \y in {0,\step,...,\height} {
+    \draw [gray_c] (0,\y) --++ (\width,0);
+}
+\foreach \x in {0,\step,...,\width} {
+    \draw [gray_c] (\x,0) --++ (0, \height);
+}
+
+\pgfmathsetmacro\x{(\width)/2}
+\pgfmathsetmacro\y{(\height)/2}
+\coordinate (O) at (\x,\y);
+\draw [->, >=stealth, thick] (0, \y) --++ (\width, 0);
+
+\draw [<->, >=angle 60, ultra thick] (\x, \y-2) -- (\x, \y+2);
+\draw (O) node [below left] {$O$};
+\draw (O) ++ (-3, 0) node [below left] {$F$};
+\draw (O) ++ (-3, 0) node {$|$};
+\draw (O) ++ (3, 0) node [below left] {$F'$};
+\draw (O) ++ (3, 0) node {$|$};
+
+\draw [->, >=stealth, ultra thick, red] (O) ++ (-6, 0) node [below left] {$A$} --++ (0, 1.5) node [below left] {$B$};
+
+\end{tikzpicture}
+\end{center}
+
+
+
+
+\section*{Un premier système optique}
+
+\begin{center}
+\begin{tikzpicture}
+\renewcommand{\height}{8}
+\foreach \y in {0,\step,...,\height} {
+    \draw [gray_c] (0,\y) --++ (\width,0);
+}
+\foreach \x in {0,\step,...,\width} {
+    \draw [gray_c] (\x,0) --++ (0, \height);
+}
+
+\pgfmathsetmacro\x{(\width)/2-1.5}
+\pgfmathsetmacro\y{(\height)/2}
+\draw [->, >=stealth, thick] (0, \y) --++ (\width, 0);
+
+\coordinate (O) at (1,\y);
+\draw [<->, >=angle 60, ultra thick] (1, \y-1) -- (1, \y+1);
+%\draw (O) node [below left] {$O_1$};
+%\draw (O) ++ (-.375, 0) node [below left] {$F_1$};
+\draw (O) ++ (-.375, 0) node {$|$};
+\draw (O) ++ (.375, 0) node [above right] {$F'_1$};
+\draw (O) ++ (.375, 0) node {$|$};
+
+\coordinate (O) at (6.5,\y);
+\draw [<->, >=angle 60, ultra thick] (\x, \y-3.5) -- (\x, \y+3.5);
+\draw (O) node [below right] {$O_2$};
+\draw (O) ++ (-2.75, 0) node [below right] {$F_2$};
+\draw (O) ++ (-2.75, 0) node {$|$};
+\draw (O) ++ (2.75, 0) node [below right] {$F'_2$};
+\draw (O) ++ (2.75, 0) node {$|$};
+
+\draw [->, >=stealth, ultra thick, red] (.5, \y) node [below left] {$A$} --++ (0, .5) node [above left] {$B$};
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+\item[•] Quel est le grandissement total du système ?
+\end{itemize}
+
+
+
+
+\section*{Quelle est la distance focale de cette lentille ?}
+
+\begin{center}
+\begin{tikzpicture}
+\renewcommand{\height}{8}
+\foreach \y in {0,\step,...,\height} {
+    \draw [gray_c] (0,\y) --++ (\width,0);
+}
+\foreach \x in {0,\step,...,\width} {
+    \draw [gray_c] (\x,0) --++ (0, \height);
+}
+
+\pgfmathsetmacro\x{(\width)/2-1.5}
+\pgfmathsetmacro\y{(\height)/2}
+\coordinate (O) at (\x,\y);
+\draw [->, >=stealth, thick] (0, \y) --++ (\width, 0);
+
+\draw [<->, >=angle 60, ultra thick] (\x, \y-3.5) -- (\x, \y+3.5);
+\draw (O) node [below left] {$O$};
+
+\draw [->, >=stealth, ultra thick, red] (O) ++ (-6, 0) node [below left] {$A$} --++ (0, 2) node [below left] {$B$};
+
+\draw [->, >=stealth, ultra thick, red] (O) ++ (9, 0) node [below right] {$A'$} --++ (0, -3) node [below right] {$B'$};
+
+\draw [ultra thick] (\step, \step) --++ (1,0) node [midway, below] {$\SI{4}{cm}$};
+
+\end{tikzpicture}
+\end{center}
+
+\end{document}

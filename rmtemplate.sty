@@ -1,0 +1,456 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rmtemplate}[2020/11/08]
+
+% This package takes care of my own graphic charter
+
+\RequirePackage[left=2cm,right=2cm,top=3cm,bottom=2.5cm]{geometry}	% les marges
+
+\RequirePackage{pifont}																				% caractères très spéciaux
+\RequirePackage{fontawesome}																% caractères très très spéciaux
+\RequirePackage{fancyhdr}																		% header
+\RequirePackage{xcolor}																			% colors
+\RequirePackage[framemethod=tikz]{mdframed}									% fancy environments
+\RequirePackage{chngcntr}
+\RequirePackage{listings}
+
+%%%%%%%%%% graphic charter
+
+\ProcessOptions
+
+\renewcommand{\familydefault}{\sfdefault}												% sans serif font
+
+%%%%% HEADER AND FOOTER
+
+\setlength{\headheight}{30pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{gray_f}{Physique-Chimie\\R. METZDORFF}}
+\chead{\textcolor{gray_f}{Lycée Suzanne Valadon}}
+\rhead{\textcolor{gray_f}{\textcolor{gray_f}{2\textsuperscript{nde}\\2020-2021}}}
+\cfoot{\thepage}
+\let\HeadRule\headrule
+\renewcommand\headrule{\color{gray_f}\HeadRule}
+
+%%%%% COLORS
+\definecolor{gray_f}{RGB}{68,84,106}
+\definecolor{gray_c}{RGB}{214,220,229}
+\definecolor{gray_cc}{RGB}{245,245,245}
+\definecolor{bleu_f}{RGB}{91,155,213}
+\definecolor{bleu_c}{RGB}{222,235,247}
+\definecolor{red_f}{RGB}{204,0,0}
+\definecolor{red_c}{RGB}{245,204,204}
+\definecolor{orange_f}{RGB}{237,125,49}
+\definecolor{orange_c}{RGB}{251,229,214}
+\definecolor{green_f}{RGB}{112,173,71}
+\definecolor{green_c}{RGB}{226,240,217}
+\definecolor{yellow_f}{RGB}{255,192,0}
+\definecolor{yellow_c}{RGB}{255,242,204}
+\definecolor{purple_c}{RGB}{225,175,225}
+\definecolor{code_keyword}{RGB}{23,23,139}										% colors for python code
+\definecolor{code_comment}{RGB}{50,137,21}
+\definecolor{code_string}{RGB}{139,139,25}
+\definecolor{arduino_keyword}{RGB}{23,161,165}									% colors for arduino code
+\definecolor{arduino_comment}{RGB}{67,67,84}
+\definecolor{arduino_string}{RGB}{139,139,25}
+\definecolor{arduino_function}{RGB}{211,84,0}	
+
+%%%%% NEW ENVIRONMENTS
+
+%%% header
+\mdfdefinestyle{s_head}{%
+	linecolor=gray_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=false,
+	backgroundcolor=gray_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=gray_f
+}
+\newmdenv[style=s_head]{header_env}
+\newenvironment{header}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{header_env}\centering\LARGE\bf}
+	{\end{header_env}}
+	
+%%% definition
+\mdfdefinestyle{s_def}{%
+	linecolor=red_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=red_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=red_f
+}
+\newmdenv[style=s_def]{def_env}
+\newenvironment{definition}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{def_env}\textbf{Définition :}}
+	{\end{def_env}}
+
+%%% exemple
+\mdfdefinestyle{s_ex}{%
+	linecolor=gray_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=gray_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=gray_f
+}
+\newmdenv[style=s_ex]{ex_env}
+\newenvironment{exemple}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{ex_env}\textbf{Exemple :}}
+	{\end{ex_env}}
+
+%%% analyse a priori
+\mdfdefinestyle{s_prior}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=green_f
+}
+\newmdenv[style=s_prior]{prior_env}
+\newenvironment{prior}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{prior_env}\textbf{A priori :}}
+	{\end{prior_env}}
+
+%%% analyse a posteriori
+\mdfdefinestyle{s_post}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=green_f
+}
+\newmdenv[style=s_post]{post_env}
+\newenvironment{post}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{post_env}\textbf{A posteriori :}}
+	{\end{post_env}}
+	
+%%% Experience
+
+\mdfdefinestyle{s_experience}{%
+	linecolor=bleu_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=bleu_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true
+}
+\newmdenv[style=s_experience]{experience_env}
+\newenvironment{experience}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{experience_env}}
+%	\begin{experience_env}[]{\noindent\colorbox[rgb]{0.1 0.1 0.53}{\textbf{\color{white} Expérience : }}\\}}
+	{\end{experience_env}}
+
+%%% Slide
+
+\mdfdefinestyle{s_slide}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true
+}
+\newmdenv[style=s_slide]{slide_env}
+
+\newenvironment{slide}
+	{%\stepcounter{exa}%
+%		\newenvironment{myenv}{\begin{adjustwidth}{2cm}{}}{\end{adjustwidth}}
+		\addcontentsline{ldf}{figure}{0}%
+		\begin{slide_env}}
+		{\end{slide_env}
+	}
+
+%%% Conseils
+\mdfdefinestyle{s_conseil}{%
+	linecolor=orange_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=orange_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=orange_f
+}
+\newmdenv[style=s_conseil]{conseil_env}
+\newenvironment{conseil}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{conseil_env}\textbf{Conseil :}}
+	{\end{conseil_env}
+	}
+
+%%% Remarque
+\mdfdefinestyle{s_remarque}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=green_f
+}
+\newmdenv[style=s_remarque]{remarque_env}
+\newenvironment{remarque}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{remarque_env}\textbf{Remarque :}}
+	{\end{remarque_env}
+	}
+	
+%%% Document
+\newcounter{counterdoc}
+\setcounter{counterdoc}{0}
+
+\mdfdefinestyle{s_doc}{%
+	linecolor=bleu_f!,
+	outerlinewidth=1pt,%
+	frametitlerule=false,
+	topline=true,
+	bottomline=true,
+	rightline=true,
+	backgroundcolor=white,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=black
+}
+\newmdenv[style=s_doc]{doc_env}
+\newenvironment{doc}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	 \refstepcounter{counterdoc}
+	\begin{doc_env}\textbf{Document \thecounterdoc} :}
+	{\end{doc_env}
+	}
+	
+%%% Document
+%\mdfdefinestyle{s_bframe}{%
+%	linecolor=bleu_f!,
+%	outerlinewidth=1pt,%
+%	frametitlerule=false,
+%	topline=true,
+%	bottomline=true,
+%	rightline=true,
+%	backgroundcolor=white,
+%	innertopmargin=8pt,
+%	roundcorner=0pt,
+%	nobreak=true,
+%	fontcolor=black
+%}
+%\newmdenv[style=s_bframe]{bframe_env}
+%\newenvironment{bframe}
+%{%\stepcounter{exa}%
+%	\addcontentsline{ldf}{figure}{0}%
+%	\begin{bframe_env}}
+%	{\end{bframe_env}
+%	}
+	
+%%% Objectif
+\mdfdefinestyle{s_objectif}{%
+	linecolor=red_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	%topline=false,
+	%bottomline=false,
+	%rightline=false,
+	backgroundcolor=white,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=red_f
+}
+\newmdenv[style=s_objectif]{objectif_env}
+\newenvironment{objectif}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{objectif_env}\centering\LARGE\bf}
+	{\end{objectif_env}
+	}
+
+%%% Appel prof
+\newcounter{counterappelenv}
+\setcounter{counterappelenv}{0}
+
+\mdfdefinestyle{s_appel}{%
+	linecolor=red!,
+	outerlinewidth=1pt,%
+	frametitlerule=false,
+	topline=true,
+	bottomline=true,
+	rightline=true,
+	backgroundcolor=white,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=black
+}
+\newmdenv[style=s_appel]{appel_env}
+\newenvironment{appel}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\refstepcounter{counterappelenv}
+	\begin{appel_env}\center\textbf{\textcolor{red}{APPEL PROF \thecounterappelenv{}}}}
+	{\end{appel_env}
+	}
+
+%%%%% PYTHON
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    basicstyle      = \ttfamily,
+    keywordstyle    = \color{code_keyword},
+    stringstyle     = \color{code_string},
+    commentstyle    = \color{code_comment}\itshape
+}
+
+%%%%% ARDUINO
+
+\lstset{
+language=C,
+literate=
+{à}{{\`a}}1
+{é}{{\'e}}1
+{ê}{{\^e}}1
+{è}{{\`e}}1
+{ù}{{\`u}}1
+{ç}{{\c{c}}}1
+}
+
+\lstdefinestyle{Arduino}{
+    backgroundcolor=\color{white},   
+    commentstyle=\color{arduino_comment},
+    keywordstyle=\color{arduino_keyword},
+    numberstyle=\tiny\color{black},
+    stringstyle=\color{arduino_string},
+    basicstyle=\ttfamily,                
+    numbers=left,                    
+    numbersep=5pt,                  
+    language=C
+}
+
+%%%%% New command
+
+\newcommand{\cmark}{\ding{51}}			% check mark
+\newcommand{\xmark}{\ding{55}}			% cross mark
+\newcommand{\writeit}{\ding{45}}			% write it
+\newcommand{\justify}{\ding{43}}			% justify
+\newcommand{\snowflake}{\ding{100}}
+\newcommand{\thumbsup}{\marginpar{\faThumbsOUp}}
+
+\newcommand{\prof}[1]{\textcolor{gray_f}{\textit{#1}}}
+
+\newcommand{\blank}[1]{ {\color{gray_c}\underline{\phantom{#1 #1}}} } % pour les textes à trous
+
+\newcommand{\dcoma}{{,}}
+\newcommand{\cad}{c'est-à-dire}
+
+\newcommand{\app}{\colorbox{bleu_c}{\textcolor{bleu_f}{APP}}}
+\newcommand{\rea}{\colorbox{yellow_c}{\textcolor{yellow_f}{REA}}}
+\newcommand{\anarai}{\colorbox{green_c}{\textcolor{green_f}{ANA-RAI}}}
+\newcommand{\val}{\colorbox{orange_c}{\textcolor{orange_f}{VAL}}}
+\newcommand{\com}{\colorbox{red_c}{\textcolor{red_f}{COM}}}
+\newcommand{\auto}{\colorbox{white}{\textcolor{black}{AUTO}}}
+\newcommand{\rco}{\colorbox{gray_c}{\textcolor{gray_f}{RCO}}}
+
+\newcounter{counterappel}
+\setcounter{counterappel}{0}
+\newcommand{\appelprof}[1]{
+\refstepcounter{counterappel}
+\textbf{\textcolor{red}{APPEL PROF \thecounterappel{}}} #1
+}
+
+%%%%% Chimie
+
+\newcommand{\acetatedethyle}{\mathrm{C}_4\mathrm{H}_8\mathrm{O}_2}
+\newcommand{\acideoleique}{\mathrm{C}_\mathrm{18}\mathrm{H}_\mathrm{34}\mathrm{O}_\mathrm{2}}
+\newcommand{\chloruredemagnesium}{\mathrm{MgCl}_\mathrm{2}}
+\newcommand{\diazote}{\mathrm{N}_\mathrm{2}}
+\newcommand{\dioxygene}{\mathrm{O}_\mathrm{2}}
+\newcommand{\dioxydedecarbone}{\mathrm{CO}_\mathrm{2}}
+\newcommand{\eau}{\mathrm{H}_\mathrm{2}\mathrm{O}}
+\newcommand{\glycerol}{\mathrm{C}_\mathrm{3}\mathrm{H}_\mathrm{8}\mathrm{O}_\mathrm{3}}
+\newcommand{\methane}{\mathrm{CH_4}}
+\newcommand{\oleine}{\mathrm{C}_\mathrm{57}\mathrm{H}_\mathrm{104}\mathrm{O}_\mathrm{6}}
+\newcommand{\oxydedefer}{\mathrm{Fe}_\mathrm{2}\mathrm{O}_\mathrm{3}}
+\newcommand{\saccharose}{\mathrm{C}_\mathrm{12}\mathrm{H}_\mathrm{22}\mathrm{O}_\mathrm{11}}
+
+\newcommand{\ionsodium}{\mathrm{Na}^\mathrm{+}}
+\newcommand{\ioncuivreII}{\mathrm{Cu}^\mathrm{2+}}
+\newcommand{\ionmagnesiumII}{\mathrm{Mg}^\mathrm{2+}}
+\newcommand{\ionhydrogene}{\mathrm{H}^\mathrm{+}}
+\newcommand{\ionoxonium}{\mathrm{H}_3\mathrm{O}^\mathrm{+}}
+\newcommand{\ionpotassium}{\mathrm{K}^\mathrm{+}}
+\newcommand{\ionferII}{\mathrm{Fe}^\mathrm{2+}}
+\newcommand{\ionferIII}{\mathrm{Fe}^\mathrm{3+}}
+\newcommand{\ioncalcium}{\mathrm{Ca}^\mathrm{2+}}
+
+\newcommand{\fluorure}{\mathrm{F}^\mathrm{-}}
+\newcommand{\iodure}{\mathrm{I}^\mathrm{-}}
+\newcommand{\chlorure}{\mathrm{Cl}^\mathrm{-}}
+\newcommand{\sulfate}{\mathrm{SO}_\mathrm{4}^\mathrm{2-}}
+\newcommand{\permanganate}{\mathrm{MnO}_\mathrm{4}^\mathrm{-}}
+\newcommand{\hydroxyde}{\mathrm{HO}^\mathrm{-}}
+\newcommand{\oxyde}{\mathrm{O}^\mathrm{2-}}
+\newcommand{\carbonate}{\mathrm{CO}_\mathrm{3}^\mathrm{2-}}
+
+\endinput

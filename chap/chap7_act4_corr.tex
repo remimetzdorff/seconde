@@ -1,0 +1,75 @@
+\documentclass[12pt,a4paper,fleqn]{article}
+\usepackage{rmpackages}																% usual packages
+\usepackage{rmtemplate}																% graphic charter
+\usepackage{rmexocptce}																% for DS with cptce eval
+
+%\cfoot{} 													% if no page number is needed
+%\renewcommand\arraystretch{1.5}		% stretch table line height
+
+\begin{document}
+
+\begin{header}
+Correction de l'activité 4 page 69
+\end{header}
+
+\begin{enumerate}
+\item
+Les électrons de valence sont les électrons de la dernière couche occupée :
+\begin{itemize}
+\item[•] l'hélium a 2 électrons de valence ;
+\item[•] le néon et l'argon ont 8 électrons de valence.
+\end{itemize}
+
+\item
+\begin{multicols}{3}
+\begin{itemize}
+\item[•]
+Le méthane :
+\begin{center}
+\chemfig[angle increment=90, atom sep=20pt]{H-C([-1]-H)([1]-H)-H}
+\end{center}
+\item[•]
+L'eau :
+\begin{center}
+\chemfig[angle increment=90, atom sep=20pt]{H-\lewis{26,O}-H}
+\end{center}
+\item[•]
+Le sulfure d'hydrogène :
+\begin{center}
+\chemfig[angle increment=90, atom sep=20pt]{H-\lewis{26,S}-H}
+\end{center}
+\item[•]
+L'ammoniac :
+\begin{center}
+\chemfig[angle increment=90, atom sep=20pt]{H-\lewis{6,N}([1]-H)-H}
+\end{center}
+\item[•]
+Le dioxyde de carbone :
+\begin{center}
+\chemfig[angle increment=90, atom sep=20pt]{\lewis{35, O}=C=\lewis{17,O}}
+\end{center}
+\item[•]
+Le dioxygène :
+\begin{center}
+\chemfig[angle increment=90, atom sep=20pt]{\lewis{35, O}=\lewis{17,O}}
+\end{center}
+\end{itemize}
+\end{multicols}
+Dans toutes ces molécules :
+\begin{itemize}
+\item[•] chaque atome d'hydrogène est entouré de 2 électrons de valence ce qui leur permet d'avoir une configuration électronique similaire à celle de l'hélium ;
+\item[•] les autres atomes (carbone, azote, oxygène et soufre) sont chacun entourés de 8 électrons de valence ce qui leur permet d'avoir une configuration électronique similaire à celle du néon.
+\end{itemize}
+
+\item Sur le schéma du livre il manque les doublets non-liants.
+Le schéma de Lewis du glucose est :
+\begin{center}
+\chemfig[angle increment=90, atom sep=20pt]{H-C([1]=\lewis{13,O})-C([-1]-H)([1]-\lewis{04,O}-H)-C([-1]-H)([1]-\lewis{04,O}-H)-C([-1]-H)([1]-\lewis{04,O}-H)-C([-1]-H)([1]-\lewis{04,O}-H)-C([-1]-H)([1]-\lewis{04,O}-H)-H}
+\end{center}
+
+\item
+Dans une molécule, les atomes peuvent mettre en commun des électrons pour former des \textbf{liaisons covalentes}.
+Ils obtiennent ainsi la \textbf{configuration électronique du gaz noble le plus proche} ce qui les stabilise.
+\end{enumerate}
+
+\end{document}

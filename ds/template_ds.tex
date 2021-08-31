@@ -1,0 +1,322 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+\usepackage{multicol}
+\usepackage[thinspace,thinqspace,amssymb]{SIunits}
+\usepackage{pifont}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{fourier}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+\usepackage{url}
+\usepackage[breaklinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red_f,
+    citecolor=bleu_f,
+    filecolor=green_f,
+    urlcolor=bleu_f
+}
+\usepackage[hyphenbreaks]{breakurl}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{xcolor}
+\definecolor{gray_f}{RGB}{68,84,106}
+\definecolor{gray_c}{RGB}{214,220,229}
+\definecolor{bleu_f}{RGB}{91,155,213}
+\definecolor{bleu_c}{RGB}{222,235,247}
+\definecolor{red_f}{RGB}{204,0,0}
+\definecolor{red_c}{RGB}{245,204,204}
+\definecolor{orange_f}{RGB}{237,125,49}
+\definecolor{orange_c}{RGB}{251,229,214}
+\definecolor{green_f}{RGB}{112,173,71}
+\definecolor{green_c}{RGB}{226,240,217}
+\definecolor{yellow_f}{RGB}{255,192,0}
+\definecolor{yellow_c}{RGB}{255,242,204}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\textcolor{gray_f}{Physique-Chimie\\R. METZDORFF}}
+\chead{\textcolor{gray_f}{Lycée Suzanne Valadon}}
+\rhead{\textcolor{gray_f}{2020-2021}}
+\renewcommand{\headrulewidth}{0.4pt}
+\let\HeadRule\headrule
+\renewcommand\headrule{\color{gray_f}\HeadRule}
+
+%%%%% New environnements
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{chngcntr}
+
+%%% header
+\mdfdefinestyle{s_head}{%
+	linecolor=gray_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=false,
+	backgroundcolor=gray_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=gray_f
+}
+\newmdenv[style=s_head]{header_env}
+\newenvironment{header}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{header_env}\centering\LARGE\bf}
+	{\end{header_env}}
+	
+%%% definition
+\mdfdefinestyle{s_def}{%
+	linecolor=red_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=red_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=red_f
+}
+\newmdenv[style=s_def]{def_env}
+\newenvironment{definition}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{def_env}\textbf{Définition :}}
+	{\end{def_env}}
+
+%%% exemple
+\mdfdefinestyle{s_ex}{%
+	linecolor=gray_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=gray_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=gray_f
+}
+\newmdenv[style=s_ex]{ex_env}
+\newenvironment{exemple}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{ex_env}\textbf{Exemple :}}
+	{\end{ex_env}}
+
+%%% analyse a priori
+\mdfdefinestyle{s_prior}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=green_f
+}
+\newmdenv[style=s_prior]{prior_env}
+\newenvironment{prior}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{prior_env}\textbf{A priori :}}
+	{\end{prior_env}}
+
+%%% analyse a posteriori
+\mdfdefinestyle{s_post}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=true,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=green_f
+}
+\newmdenv[style=s_post]{post_env}
+\newenvironment{post}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{post_env}\textbf{A posteriori :}}
+	{\end{post_env}}
+	
+%%% Experience
+
+\mdfdefinestyle{s_experience}{%
+	linecolor=bleu_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=bleu_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true
+}
+\newmdenv[style=s_experience]{experience_env}
+\newenvironment{experience}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{experience_env}}
+%	\begin{experience_env}[]{\noindent\colorbox[rgb]{0.1 0.1 0.53}{\textbf{\color{white} Expérience : }}\\}}
+	{\end{experience_env}}
+
+%%% Slide
+
+\mdfdefinestyle{s_slide}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true
+}
+\newmdenv[style=s_slide]{slide_env}
+
+\newenvironment{slide}
+	{%\stepcounter{exa}%
+%		\newenvironment{myenv}{\begin{adjustwidth}{2cm}{}}{\end{adjustwidth}}
+		\addcontentsline{ldf}{figure}{0}%
+		\begin{slide_env}}
+		{\end{slide_env}
+	}
+
+%%% Conseils
+\mdfdefinestyle{s_conseil}{%
+	linecolor=orange_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=orange_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=orange_f
+}
+\newmdenv[style=s_conseil]{conseil_env}
+\newenvironment{conseil}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{conseil_env}\textbf{Conseil :}}
+	{\end{conseil_env}
+	}
+
+%%% Remarque
+\mdfdefinestyle{s_remarque}{%
+	linecolor=green_f!,
+	outerlinewidth=3pt,%
+	frametitlerule=false,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	backgroundcolor=green_c,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=green_f
+}
+\newmdenv[style=s_remarque]{remarque_env}
+\newenvironment{remarque}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{remarque_env}\textbf{Remarque :}}
+	{\end{remarque_env}
+	}
+	
+%%% Document
+\mdfdefinestyle{s_doc}{%
+	linecolor=bleu_f!,
+	outerlinewidth=1pt,%
+	frametitlerule=false,
+	topline=true,
+	bottomline=true,
+	rightline=true,
+	backgroundcolor=white,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=black
+}
+\newmdenv[style=s_doc]{doc_env}
+\newenvironment{doc}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{doc_env}\textbf{Document}}
+	{\end{doc_env}
+	}
+	
+%%% Données
+\mdfdefinestyle{s_don}{%
+	linecolor=bleu_f!,
+	outerlinewidth=1pt,%
+	frametitlerule=false,
+	topline=true,
+	bottomline=true,
+	rightline=true,
+	backgroundcolor=white,
+	innertopmargin=8pt,
+	roundcorner=0pt,
+	nobreak=true,
+	fontcolor=black
+}
+\newmdenv[style=s_don]{don_env}
+\newenvironment{donnee}
+{%\stepcounter{exa}%
+	\addcontentsline{ldf}{figure}{0}%
+	\begin{don_env}\textcolor{bleu_f}{\textbf{Données}}}
+	{\end{don_env}
+	}
+
+%%%%% New command
+
+\newcommand{\diazote}{\text{N}_2}
+\newcommand{\dioxygene}{\text{O}_2}
+\newcommand{\dioxydedecarbone}{\text{CO}_2}
+\newcommand{\eau}{\text{H}_2\text{O}}
+\newcommand{\chlorure}{\text{Cl}^-}
+\newcommand{\prof}[1]{\textcolor{gray_f}{\textit{#1}}}
+
+\newcommand{\app}{\colorbox{bleu_c}{\textcolor{bleu_f}{APP}}}
+\newcommand{\rea}{\colorbox{yellow_c}{\textcolor{yellow_f}{REA}}}
+\newcommand{\anarai}{\colorbox{green_c}{\textcolor{green_f}{ANA-RAI}}}
+\newcommand{\val}{\colorbox{orange_c}{\textcolor{orange_f}{VAL}}}
+\newcommand{\com}{\colorbox{red_c}{\textcolor{red_f}{COM}}}
+\newcommand{\auto}{\colorbox{white}{\textcolor{black}{AUTO}}}
+\newcommand{\rco}{\colorbox{gray_c}{\textcolor{gray_f}{RCO}}}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}
+
